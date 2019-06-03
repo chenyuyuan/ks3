@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
-@MapperScan("com.se.mapper")
+@MapperScan("com.yuan.mapper")
 @Import(DemoConfiguration.class)
 public class DemoApplication {
 
