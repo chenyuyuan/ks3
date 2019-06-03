@@ -1,4 +1,4 @@
-package com.yuan.mapper;
+package com.yuan.dao;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;

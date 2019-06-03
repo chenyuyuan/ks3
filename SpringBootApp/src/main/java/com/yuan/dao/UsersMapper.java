@@ -1,6 +1,6 @@
-package com.yuan.mapper;
+package com.yuan.dao;
 
-import com.yuan.entity.Users;
+import com.yuan.dao.entity.Users;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

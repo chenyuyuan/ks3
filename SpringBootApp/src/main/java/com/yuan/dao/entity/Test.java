@@ -1,4 +1,4 @@
-package com.yuan.entity;
+package com.yuan.dao.entity;
 
 public class Test {
     private int id;

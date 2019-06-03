@@ -1,6 +1,6 @@
-package com.yuan.mapper;
+package com.yuan.dao;
 
-import com.yuan.entity.Test;
+import com.yuan.dao.entity.Test;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

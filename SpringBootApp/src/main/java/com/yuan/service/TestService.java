@@ -1,8 +1,8 @@
 package com.yuan.service;
 
 
-import com.yuan.entity.Test;
-import com.yuan.mapper.TestMapper;
+import com.yuan.dao.entity.Test;
+import com.yuan.dao.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
