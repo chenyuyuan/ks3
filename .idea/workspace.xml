@@ -2,119 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d333551-fc86-40f5-abb5-cb4670ed2457" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ks3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_14_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/DemoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/configuration/MyConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/MyConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/ItemInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ItemInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/PublishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/PublishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/GoodsClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/GoodsClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/GoodsInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/GoodsInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/GoodsLike.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/GoodsLike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/InfoDeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/InfoDeal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/OrderState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/mapper/GoodsClassMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/GoodsClassMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/mapper/GoodsLikeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/GoodsLikeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/GoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/mapper/ItemInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/ItemInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/mapper/ProfileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/ProfileMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/mapper/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/TestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/result/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/result/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/result/ResultFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/result/ResultFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/service/GoodsClassService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/GoodsClassService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/service/GoodsLikeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/GoodsLikeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/GoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/service/ItemInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/ItemInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/service/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/TestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/se/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/mapper/testmapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/mapper/testmapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/SpringBootApp/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
+            <state relative-caret-position="319">
               <caret line="17" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -140,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/MyConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="319">
@@ -149,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SpringBootApp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+            <state relative-caret-position="447">
+              <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -174,8 +63,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/classes.java" />
-        <option value="$PROJECT_DIR$/SpringBootApp/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/pom.xml" />
       </list>
     </option>
   </component>
@@ -187,10 +76,15 @@
         <option name="userSettingsFile" value="C:\Application\apache-maven-3.6.0-bin\apache-maven-3.6.0\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="171" />
-    <option name="y" value="-19" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="146" />
+    <option name="y" value="-9" />
     <option name="width" value="1440" />
     <option name="height" value="810" />
   </component>
@@ -199,6 +93,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,12 +127,18 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="yuan" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,18 +196,18 @@
       <updated>1559398129886</updated>
       <workItem from="1559398132232" duration="1301000" />
       <workItem from="1559399510640" duration="2210000" />
+      <workItem from="1559524188493" duration="768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3511000" />
+    <option name="totallyTimeSpent" value="4279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -314,9 +215,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3297587" />
@@ -329,7 +228,9 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="bottom" id="Spring" order="12" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -339,6 +240,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,16 +248,9 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/classes.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
+        <state relative-caret-position="319">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -367,6 +262,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
         </state>
       </provider>
     </entry>
