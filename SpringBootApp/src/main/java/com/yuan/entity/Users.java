@@ -1,4 +1,4 @@
-package com.yuan.dao.entity;
+package com.yuan.entity;
 
 //import com.sun.istack.internal.NotNull;
 

@@ -1,6 +1,6 @@
 package com.yuan.service;
 
-import com.yuan.dao.ItemInfoMapper;
+import com.yuan.mapper.ItemInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

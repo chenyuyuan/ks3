@@ -1,4 +1,4 @@
-package com.yuan.dao.entity;
+package com.yuan.entity;
 
 public class InfoDeal {
     private int order_id;

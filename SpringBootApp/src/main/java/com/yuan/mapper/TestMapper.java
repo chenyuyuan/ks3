@@ -1,10 +1,12 @@
-package com.yuan.dao;
+package com.yuan.mapper;
 
-import com.yuan.dao.entity.Test;
+import com.yuan.entity.Test;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface TestMapper {
     @Select("SELECT * FROM test")
     List<Test> queryById();

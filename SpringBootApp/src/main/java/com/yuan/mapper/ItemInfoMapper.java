@@ -1,8 +1,10 @@
-package com.yuan.dao;
+package com.yuan.mapper;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ItemInfoMapper {
 
     @Insert("INSERT INTO orders (goods_id,addr_pro,addr_city,addr_det) VALUES(#{goods_id},#{addr_pro},#{addr_city},#{addr_det})")

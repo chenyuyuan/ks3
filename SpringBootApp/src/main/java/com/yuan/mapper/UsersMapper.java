@@ -1,10 +1,12 @@
-package com.yuan.dao;
+package com.yuan.mapper;
 
-import com.yuan.dao.entity.Users;
+import com.yuan.entity.Users;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UsersMapper {
 
     //查询用户信息，通过用户名

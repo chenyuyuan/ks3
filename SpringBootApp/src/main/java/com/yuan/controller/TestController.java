@@ -1,8 +1,9 @@
 package com.yuan.controller;
 
-import com.yuan.dao.entity.Test;
+import com.yuan.entity.Test;
 import com.yuan.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,11 @@ public class TestController {
     @RequestMapping("/test")
     public String test() {
         return "Hello";
+    }
+
+    @GetMapping
+    @RequestMapping("/user")
+    public String getUsers() {
+        return "Hello Spring Security";
     }
 }
