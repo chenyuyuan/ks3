@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    
+    <style>
+        button:focus{
+            outline:0;
+        }
+        .btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus {
+            outline: none;
+            border-color: transparent;
+            box-shadow:none;
+        }
+        .shadow{
+            -webkit-box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+            -moz-box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+            box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+        }
+        .shadow-smaller{
+            -webkit-box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+            -moz-box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+            box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+        }
+        body{
+            background-color: #fafafa;
+            padding:60px
+        }
+        .logo{
+            font-family: Catull;
+            font-size: 50px;
+            padding:0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="font-size: 15px;">
+    
+    <div class="container">
+        <div style="text-align: center;margin-bottom: 40px">
+            <span class="logo" style="color: #666666">注册</span>
+        </div>
+        <input id="account" type="text" class="form-control center-block" placeholder="账号" style="width:300px;height: 48px">
+        <input id="password1" type="password" class="form-control center-block" placeholder="密码" style="width:300px;height: 48px;border-top: 0px">
+        <input id="password2" type="password" class="form-control center-block" placeholder="再次输入密码" style="width:300px;height: 48px;border-top: 0px">
+        <p id="tips" class="text-center text-muted" style="margin-top: 10px"></p>
+        <button id="register" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">注册</button>
+        <div style="width: 300px;margin:0 auto;margin-top: 7px">
+            <a href="http://127.0.0.1:3000/login"><span>登录</span></a>
+        </div>
+    </div>
+    <div style="margin:300px "></div>
+    <hr class="divider">
+    
+    <footer style="padding-left:200px">
+        <p>Copyright © 2017 Knowledgeispower.net</p>
+        <p>关于</p>
+        <p class="pull-right"><a href="#top">回到顶部</a></p>
+    </footer>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        $("#account").click(function () {
+            $("#tips").html("")
+        })
+        $("#password1").click(function () {
+            if($("#account").val()==""){
+                $("#tips").html("账号不能为空")
+            }
+            else{
+                $("#tips").html("")
+            }
+        })
+        $("#password2").keyup(function () {
+            if($("#password1").val()!==$("#password2").val()){
+                $("#tips").html("密码不一致")
+            }
+        })
+        $("#register").click(function () {
+            account=$("#account").val();
+            password1=$("#password1").val();
+            password2=$("#password2").val();
+            if(account==""){
+                $("#tips").html("账号不能为空")
+            }
+            else{
+                if(password1==""||password2==""){
+                    $("#tips").html("请输入密码")
+                }
+                else if(password1!==password2){
+                    $("#tips").html("两次密码不一致")
+                }
+                else if(password1===password2){
+                    $("#tips").html("")
+                    data={
+                        "account":account,
+                        "password":password1
+                    }
+                    $.ajax({
+                        type:'POST',
+                        url:'http://127.0.0.1:3000/registering',
+                        contentType: 'application/json; charset=UTF-8',
+                        data:JSON.stringify(data),
+                        dataType:'json',
+                        success:function (data) {
+                            if(data["msg"]=="registered"){
+                                window.location.href="http://127.0.0.1:3000/login"
+                            }
+                            else if(data["msg"]=="accountexisting"){
+                                $("#tips").html("账号已存在")
+                            }
+                        },
+                        error:function(a,b,c) {
+                            console.log(a.status+"::"+a.readyState+"::"+b)
+                        }
+                    })
+                }
+            }
+        })
+    })
+</script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+
