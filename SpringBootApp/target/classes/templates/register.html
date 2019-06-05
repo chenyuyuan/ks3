@@ -54,14 +54,14 @@
         <p id="tips" class="text-center text-muted" style="margin-top: 10px"></p>
         <button id="register" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">注册</button>
         <div style="width: 300px;margin:0 auto;margin-top: 7px">
-            <a href="http://127.0.0.1:3000/login"><span>登录</span></a>
+            <a href="http://127.0.0.1:8080/login"><span>登录</span></a>
         </div>
     </div>
     <div style="margin:300px "></div>
     <hr class="divider">
     
     <footer style="padding-left:200px">
-        <p>Copyright © 2017 Knowledgeispower.net</p>
+        <p>Copyright © 2019 Knowledgeispower.net</p>
         <p>关于</p>
         <p class="pull-right"><a href="#top">回到顶部</a></p>
     </footer>
@@ -107,13 +107,13 @@
                     }
                     $.ajax({
                         type:'POST',
-                        url:'http://127.0.0.1:3000/registering',
+                        url:'http://localhost:8080/api/register',
                         contentType: 'application/json; charset=UTF-8',
                         data:JSON.stringify(data),
                         dataType:'json',
                         success:function (data) {
                             if(data["msg"]=="registered"){
-                                window.location.href="http://127.0.0.1:3000/login"
+                                window.location.href="http://localhost:8080/login"
                             }
                             else if(data["msg"]=="accountexisting"){
                                 $("#tips").html("账号已存在")

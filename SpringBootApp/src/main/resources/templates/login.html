@@ -54,16 +54,16 @@
         <p id="tips" class="text-center text-muted" style="margin-top: 10px"></p>
         <button id="login" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">登录</button>
         <div style="width: 300px;margin:0 auto;margin-top: 7px">
-            <a href="http://127.0.0.1:8080/register"><span>注册</span></a>
+            <a href="http://localhost:8080/register"><span>注册</span></a>
         </div>
     </div>
     <div style="margin:300px "></div>
     <hr class="divider">
     <footer style="padding-left:200px">
-        <p>Copyright © 2017 Knowledgeispower.net</p>
+        <p>Copyright © 2019 Knowledgeispower.net</p>
         <p>关于</p>
         <p class="pull-right"><a href="#top">回到顶部</a></p>
-        <a href="http://127.0.0.1:8080/loginadmin">管理员登录</a>
+        <a href="http://localhost:8080/loginadmin">管理员登录</a>
     </footer>
 </div>
 <script type="text/javascript">
@@ -103,13 +103,13 @@
                     dataType:'json',
                     success:function (data) {
                         console.log(data)
-                        if(data["message"]=="logined"){
-                            window.location.href="http://localhost:8080/home"
+                        if(data["data"]["msg"]=="login successfully"){
+                            window.location.href="http://127.0.0.1:8080/home"
                         }
-                        else if(data["message"]=="wrongpassword"){
+                        else if(data["data"]["message"]=="wrongpassword"){
                             $("#tips").html("密码错误")
                         }
-                        else if(data["message"]=="nosuchaccount"){
+                        else if(data["data"]["message"]=="nosuchaccount"){
                             $("#tips").html("账号不存在")
                         }
                     },

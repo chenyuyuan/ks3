@@ -11,10 +11,11 @@ public class LoginController {
 
     private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
-    @GetMapping(value = "/login")
+    @GetMapping(value = {"/login","/"})
     public String pageLogin(Model model) {
         String name = "yuan";
         model.addAttribute("name", name);
         return "login";
     }
+
 }

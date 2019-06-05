@@ -10,15 +10,15 @@ import org.springframework.stereotype.Repository;
 public interface UsersMapper {
 
     //查询用户信息，通过用户名
-    @Select("SELECT password FROM users WHERE account = #{account}")
+    @Select("SELECT password FROM user WHERE account = #{account}")
     String findUserByAccount(@Param("account") String account);
 
     //查询用户信息，通过userid
-    @Select("SELECT * FROM users WHERE id = #{id}")
+    @Select("SELECT * FROM user WHERE id = #{id}")
     Users findUserById(@Param("id") int id);
 
     //查询用户输入密码是否正确
-    @Select("SELECT * FROM users WHERE account = #{account} and password=#{password}")
+    @Select("SELECT * FROM user WHERE account = #{account} and password=#{password}")
     Users filterByAccountAndPassword(@Param("account") String account, @Param("password") String password);
 
     //增加新用户

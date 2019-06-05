@@ -1,39 +1,19 @@
 package com.yuan.controller;
 
-import com.yuan.entity.Test;
-import com.yuan.service.TestService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@RestController
-
+@Controller
 public class TestController {
-    @Autowired
-    private TestService testService;
+    private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
-    @RequestMapping("/query")
-    public List<Test> testQuery() {
-        return testService.queryById();
-    }
-
-    @RequestMapping("/test")
-    public String test() {
-        return "Hello";
-    }
-
-    @GetMapping
-    @RequestMapping("/user")
-    public String getUsers() {
-        return "Hello Spring Security";
-    }
-
-    @GetMapping
-    @RequestMapping("/login")
-    public String login() {
-        return "Hello Spring Security";
+    @GetMapping(value = "/test")
+    public String pageTest(Model model) {
+        String name = "yuan";
+        model.addAttribute("name", name);
+        return "test";
     }
 }

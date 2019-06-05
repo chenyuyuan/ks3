@@ -7,13 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class LoginAdminController {
     private static final Logger log = LoggerFactory.getLogger(HelloController.class);
 
-    @GetMapping(value = "/home")
-    public String pageLogin(Model model) {
+    @GetMapping(value = "/loginadmin")
+    public String pageLoginAdmin(Model model) {
         String name = "yuan";
         model.addAttribute("name", name);
-        return "home";
+        return "adminlogin";
     }
 }

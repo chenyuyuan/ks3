@@ -26,12 +26,7 @@ public class ApiLoginController {
     @CrossOrigin
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
     @ResponseBody
-    public Result Login(@RequestBody JSONObject params , HttpServletRequest request, HttpServletResponse response) {
-
-        response.setHeader("Access-Control-Allow-Headers", "X-Requested-With, accept, content-type, xxxx, application/json");
-        response.setHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH");
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
-        response.setHeader("Access-Control-Allow-Credentials", String.valueOf(true));
+    public Result Login(@RequestBody JSONObject params, HttpServletRequest request, HttpServletResponse response) {
 
         //Integer id = params.getInteger("userId");
         String account = params.getString("account");
@@ -61,7 +56,7 @@ public class ApiLoginController {
             System.out.println("服务器已经存在session，session的id是："+session.getId());
         }
         System.out.println(session.getId());
-        hashtable.put("msg","logined");
+        hashtable.put("msg","login successfully");
         return ResultFactory.buildSuccessResult(hashtable);
     }
     @CrossOrigin
