@@ -30,4 +30,10 @@ public class TestController {
     public String getUsers() {
         return "Hello Spring Security";
     }
+
+    @GetMapping
+    @RequestMapping("/login")
+    public String login() {
+        return "Hello Spring Security";
+    }
 }

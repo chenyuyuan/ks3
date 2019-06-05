@@ -2,8 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dc5c07a-ec5d-4d87-b0e5-8e3b1c7582ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiHomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiLoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/toroto.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/js/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/js/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/reddit.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_1_4_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpringBootApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/YuanApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/YuanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/AdminUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Goods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/GoodsClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/GoodsInformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/GoodsLike.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/InfoDeal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/OrderState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Orders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid102.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid103.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid104.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid105.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid106.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/itemid7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/adminhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/adminhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/essay.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/essay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/ranking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/DemoApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/DemoConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/configuration/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/ImageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/controller/UploadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/mapper/UsersMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/mapper/UsersMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/com/yuan/service/UsersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/adminhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/adminhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/essay.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/essay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/ranking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBootApp/target/classes/templates/register.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/SpringBootApp/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,9 +109,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
+            <state relative-caret-position="696">
+              <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="11" selection-start-line="11" selection-end-line="18" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiLoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/YuanApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
               <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -44,61 +176,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/UsersService.java">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/hello.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-290">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/SecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="29">
+              <caret line="1" column="51" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -106,8 +187,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="58">
+              <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/AdminUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Users.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -130,31 +238,38 @@
       <list>
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/ProfileMapper.java" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ItemInfoController.java" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HelloController.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/hello.html" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/profile.html" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/login.html" />
         <option value="$APPLICATION_CONFIG_DIR$/iedis/Patterns.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/iedis/Preview.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/iedis/Preview.json" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/register.html" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/essay.html" />
-        <option value="$PROJECT_DIR$/SpringBootApp/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/ranking.html" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/dao/ItemInfoMapper.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/dao/TestMapper.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/ItemInfoService.java" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/UsersService.java" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/dao/UsersMapper.java" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HelloController.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoConfiguration.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/adminhome.html" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/essay.html" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/home.html" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/profile.html" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/ranking.html" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/register.html" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/RegisterController.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/UsersService.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiImageController.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiLoginController.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/AdminUser.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Users.java" />
+        <option value="$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java" />
       </list>
     </option>
   </component>
@@ -172,8 +287,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="192" />
-    <option name="y" value="-18" />
+    <option name="x" value="147" />
+    <option name="y" value="-9" />
     <option name="width" value="1440" />
     <option name="height" value="810" />
   </component>
@@ -182,7 +297,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,10 +330,79 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="yuan" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yuan" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yuan" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yuan" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="yuan" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ks3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringBootApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -254,11 +437,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Document/Document/SSS.pem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SpringBootApp/src/main/resources/static" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29391503" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyuyuan\Desktop\GitHub\ks3\SpringBootApp\src\main\resources\static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cyuyuan\Desktop\GitHub\ks3\SpringBootApp\src\main\resources\static" />
+      <recent name="C:\Users\Cyuyuan\Desktop\GitHub\ks3\SpringBootApp\src\main\resources\static\img" />
+      <recent name="C:\Users\Cyuyuan\Desktop\GitHub\ks3\SpringBootApp\src\main\resources" />
+      <recent name="C:\Users\Cyuyuan\Desktop\GitHub\ks3\SpringBootApp\src\main\resources\static\js" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -273,7 +467,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="YuanApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="SrpingBootApp" />
       <extension name="coverage">
         <pattern>
@@ -281,14 +475,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuan.DemoApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yuan.YuanApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.DemoApplication" />
+        <item itemvalue="Spring Boot.YuanApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -304,18 +498,21 @@
       <updated>1559610222842</updated>
       <workItem from="1559610272367" duration="2147000" />
       <workItem from="1559630665564" duration="737000" />
-      <workItem from="1559632593541" duration="8478000" />
+      <workItem from="1559632593541" duration="9126000" />
+      <workItem from="1559695835391" duration="1265000" />
+      <workItem from="1559697178817" duration="5083000" />
+      <workItem from="1559702406974" duration="3101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18610000" />
+    <option name="totallyTimeSpent" value="28707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28150135" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22050938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -326,7 +523,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25737265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -340,7 +537,6 @@
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3297587" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.3297587" />
       <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.33109918" />
-      <window_info anchor="right" id="Redis Servers" weight="0.3297587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -351,10 +547,15 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" weight="0.3297587" />
       <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Redis Servers" order="10" weight="0.3297587" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/GoodsClassService.java" />
@@ -366,35 +567,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HomeController.java" />
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ItemInfoController.java" />
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ImageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/SrpingBootApp.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/UploadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/result/Result.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-17">
@@ -416,79 +589,190 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/adminhome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/hello.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="redis://IedisURI?type=Explorer&amp;label=127.0.0.1&amp;host=127.0.0.1&amp;port=6379&amp;password=1899&amp;timestamp=1559634697913&amp;nodeHost=127.0.0.1&amp;nodePort=6379">
       <provider selected="true" editor-type-id="r" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/login.html">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/TestMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3115">
-          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+        <state relative-caret-position="116">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/TestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/ItemInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/register.html">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/ItemInfoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-580">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="203">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="29">
+            <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/SrpingBootApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2784" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="83" column="12" selection-start-line="83" selection-start-column="8" selection-end-line="86" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/YuanConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiHomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/adminhome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/essay.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2784">
+        <state relative-caret-position="145">
+          <caret line="5" column="39" lean-forward="true" selection-end-line="510" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#4;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#4;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#5;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#6;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#1;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
           <caret line="510" selection-start-line="510" selection-end-line="510" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -569,78 +853,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/ranking.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="29">
+          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/TestMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/TestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/ItemInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <caret line="8" selection-start-line="8" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/ItemInfoMapper.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="290">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/static/img/toroto.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/static/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/static/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/service/UsersService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="232">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiImageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="371">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="e#417#440#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -651,19 +940,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/configuration/SecurityConfig.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/HelloController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        <state relative-caret-position="157">
+          <caret line="13" selection-start-line="13" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoApplication.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiRegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
+        <state relative-caret-position="58">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="11" selection-start-line="11" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/hello.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="51" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/ApiLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/YuanApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
           <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -671,39 +1028,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/DemoConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+        <state relative-caret-position="58">
+          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/TestController.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/AdminUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        <state relative-caret-position="58">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/.gitignore">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/entity/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-457" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="29">
-            <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
+        <state relative-caret-position="435">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/SpringBootApp/src/main/java/com/yuan/mapper/UsersMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="348">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

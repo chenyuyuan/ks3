@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 public interface UsersMapper {
 
     //查询用户信息，通过用户名
-    @Select("SELECT * FROM users WHERE account = #{account}")
-    Users findUserByAccount(@Param("account") String account);
+    @Select("SELECT password FROM users WHERE account = #{account}")
+    String findUserByAccount(@Param("account") String account);
 
     //查询用户信息，通过userid
     @Select("SELECT * FROM users WHERE id = #{id}")

@@ -15,7 +15,7 @@ public class HelloController {
 
     @GetMapping(value = "/hello")
     public String hello(Model model) {
-        String name = "jiangbei";
+        String name = "yuan";
         model.addAttribute("name", name);
         return "hello";
     }

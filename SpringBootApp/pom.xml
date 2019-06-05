@@ -81,10 +81,10 @@
 			<version>1.0.18</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency>-->
 
 
 		<!-- 以上数据库相关-->

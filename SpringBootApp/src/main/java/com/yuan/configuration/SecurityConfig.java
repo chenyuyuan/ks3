@@ -1,3 +1,4 @@
+/*
 package com.yuan.configuration;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,3 +12,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll().and().logout().permitAll();
     }
 }
+*/
