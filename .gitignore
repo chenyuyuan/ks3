@@ -24,3 +24,4 @@ files
 /nbdist/
 /.nb-gradle/
 /build/
+.idea/workspace.xml
