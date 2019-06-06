@@ -1,7 +1,7 @@
 package com.yuan.service;
 
 import com.yuan.mapper.UsersMapper;
-import com.yuan.entity.Users;
+import com.yuan.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +13,12 @@ public class UsersService {
         return usersMapper.findUserByAccount(account);
     }
 
-    public Users selectUserById(int id) {
+    public User selectUserById(int id) {
         return usersMapper.findUserById(id);
     }
 
 
-    public Users toLogin(String account, String password){
+    public User toLogin(String account, String password){
         return usersMapper.filterByAccountAndPassword(account, password);
     }
 

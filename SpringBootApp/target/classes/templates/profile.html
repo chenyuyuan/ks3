@@ -1,10 +1,295 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    
+    <style>
+        textarea:focus{
+            outline: 0;
+        }
+        .btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus {
+            outline: none;
+            border-color: transparent;
+            box-shadow:none;
+        }
+        .shadow{
+            -webkit-box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+            -moz-box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+            box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+        }
+        .shadow-smaller{
+            -webkit-box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+            -moz-box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+            box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+        }
+    
+    </style>
 </head>
-<body>
+<body style="background-color: #fafafa">
+<div class="container-fluid">
+    <div class="row clearfix">
+        <ul class="nav nav-pills shadow" style="height:50px;background-color: #ffffff;margin-right: -3px;margin-left: 5px">
+            <li class="active">
+                <a href="http://127.0.0.1:8080/home" style="padding: 0 10px 0 10px;font-size: 28px">知</a>
+            </li>
+            <li>
+                <a style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/home">首页</a>
+            </li>
+            
+            <li>
+                <a class="text-muted" style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/topicSquare">话题</a>
+            </li>
+            <li style="margin-left: 60px;margin-top: 8px">
+                <div class="input-group" style="width:342px">
+                    <input type="text"  onclick="window.location.href='http://127.0.0.1:3000/search'" class="form-control">
+                    <span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">搜索</span>
+                </div>
+            </li>
+            <li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
+                <span class="text-muted" name="{{myid}}" style="font-size:16px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'" style="margin-right: 18px;">消息</span>
+                <img data-toggle="dropdown" src="http://127.0.0.1:3000/static/userhead/{{myid}}.jpg" style="width:28px">
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="http://127.0.0.1:8080/people/me/myask">个人主页</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:3000/logout">退出登录</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="col-md-12 column" style="margin-top: 10px">
+        <div class="row clearfix">
+            <div class="col-md-2 column">
+            </div>
+            <div class="col-md-5 column" style="padding:0;margin: 2px">
+                
+                <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                    <span id="toanswer" style="border: #f3f3f3 solid 0px;background-color: #ffffff;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;"></span>
+                    <span onclick="window.location.href='http://127.0.0.1:8080/home'" class="" style="font-weight: bold;margin-left: 22px;color:#77839c;margin-right: 40px">按时间</span>
+                    <span onclick="window.location.href='http://127.0.0.1:8080/home/like'" style="margin-left: 120px;border: #0084ff solid 0px;background-color: white;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;">赞最多</span>
+                    <span onclick="window.location.href='http://127.0.0.1:8080/home/com'" class="pull-right" style="margin-left: 22px;color:#77839c;margin-right: 40px">评论最多</span>
+                    <!--<span style="margin-left: 22px;color: #77839c">•••</span>-->
+                </div>
+                <div id='answering' style="display: none">
+                    <div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                        <img src="http://127.0.0.1:8080/static/userhead/1.jpg" style="width: 25px"/>
+                        <span>chenyuyuan</span>
+                    </div>
+                    <div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                        <textarea style="width: 100%;height: 100px;border: 0;" onclick="if($(this).val()=='写回答..'){$(this).val('')}">写回答..</textarea>
+                    </div>
+                    <div class="shadow-smaller" style="height:64px;background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                        <button id="submitanswer" class="btn btn-info" style="position: relative;float: right">提交问题</button>
+                    </div>
+                </div>
+                <div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                    <span style="font-weight: bold;font-size: 20px" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'">{{key.queTitle}}</span>
+                    <br/>
+                    <img src="http://127.0.0.1:8080/static/userhead/{{key.uid}}.jpg" style="width: 25px" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">
+                    <span style="font-size: 18px;font-family: 'Helvetica Neue';" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">{{key.account}}</span>
+                    <span class="text-muted">,{{key.shortIntro}}</span>
+                    <p class="text-muted" style="font-size: 14px">{{key.like}}人赞同了该答案</p>
+                    <p style="font-size: 15px;line-height: 24px">{{key.content}}</p>
+                    <p class="text-muted" style="font-size: 14px">发布于{{key.time}}</p>
+                    <div>
+                        {% if key.ilike=="0" %}
+                        <span class="text-info anslike" name="0_{{key.id}}" style="background-color:#99fffb;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;">▲{{key.like}}</span>
+                        {% else %}
+                        <span class="text-info anslike" name="1_{{key.id}}" style="background-color:#00b0e4;padding:6px 12px 6px 12px;border: #31708f 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;">▲{{key.like}}</span>
+                        {% endif %}
+                        <span id="comment{{key.id}}" class="text-muted comment" name="{{key.id}}" style="margin-left: 20px;">{{key.comCount}}条评论</span>
+                        <span class="text-muted" style="margin-left: 20px;">分享</span>
+                        {%if key.istar=="0"%}
+                        <span class="text-muted answerstar" name="0_{{key.id}}" style="margin-left: 20px;">收藏</span>
+                        {% elif key.istar=="1" %}
+                        <span class="text-muted answerstar" name="1_{{key.id}}" style="margin-left: 20px;">取消收藏</span>
+                        {% endif %}
+                        <span class="text-muted" style="margin-left: 20px;">•••</span>
+                    </div>
+                    <hr id="line{{key.id}}" style="display:none;margin-top: 15px;margin-bottom: 15px"/>
+                    <div id="thetopcomment" name="0">
+                        <div class="input-group" style="margin-top: 10px;">
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon"  onclick='var content= $(this).prev().val();var ansid=$(this).parent().parent().prev().prev().find(".comment").attr("name");datas={"ansid":ansid,"content":content,"pid":-1};$.ajax({url:"http://127.0.0.1:3000/comment/answer/submit",type:"POST",data:JSON.stringify(datas),contentType:"application/json; charset=UTF-8",dataType:"json",success:function (data) {if(data.data["msg"]=="good"){alert("评论成功")}window.location.reload() },error:function(a,b,c) {console.log(a.status+"::"+a.readyState+"::"+b) }})' style="background-color: #6db0ff;color:white;width: 50px">发表</span>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <ul class="pagination" style="margin-left: 30px;margin-right: 30px">
+                    <li><a href="#">Prev</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 column" style="padding: 0;margin: 2px;margin-left: 12px">
+                <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                    <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'">申请中的话题</span>
+                    <span class="pull-right" style="margin-top: 12px" onclick="if($('.applytopic').css('display')=='none'){$('.applytopic').css('display','')}else{$('.applytopic').css('display','none')}"  >申请话题</span>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="shadow-smaller applytopic" style="display: none;margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                    <input id="topic" type="text" class="form-control center-block" placeholder="话题名称" style="width:300px;height: 48px">
+                    <input id="topicintro" type="text" class="form-control center-block" placeholder="话题简介" style="width:300px;height: 48px;border-top: 0px">
+                    <p id="tips" class="text-center text-muted" style="margin-top: 10px"></p>
+                    <button id="submitinfo" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交申请</button>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                    <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'">{{key.topic}}</span>
+                    {%if key.isupport=="0"%}
+                    <span class="pull-right supportit" name="0_{{key.id}}" style="margin-top: 5px;color: #0d83ff;background-color: #fafafa;border: solid 1px #00bfff;padding: 3px 5px 3px 5px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">支持</span>
+                    {%elif key.isupport=="1"%}
+                    <span class="pull-right supportit" name="1_{{key.id}}" style="margin-top: 5px;color: #0d83ff;background-color: #fafafa;border: solid 1px #00bfff;padding: 3px 5px 3px 5px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">取消</span>
+                    {%endif%}
+                    <span style="margin-top: 12px">{{key.topicIntro}}</span>
+                    <div class="progress">
+                        <div class="progress-bar probar" name="{{key.support}}" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                            <span class="sr-only">{{key.support*10}}</span>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="col-md-2 column">
+            </div>
+        </div>
+        <hr style="margin: 20px;">
+        <div class="row clearfix">
+            <div class="col-md-2 column">
+            </div>
+            <div class="col-md-5 column">
+                <address> <strong>hit.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+            </div>
+            <div class="col-md-3 column">
+            </div>
+            <div class="col-md-2 column">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="UTF-8">
+    function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
+    $(document).ready(function () {
+        //回答点赞
+        $(".anslike").click(function () {
+            a=$(this).attr("name");
+            console.log(a);
+            flag=a[0]
+            answerid=''
+            for(var key in a){
+                if(key>1){
+                    answerid=answerid+a[key]
+                }
+            }
+            data={
+                "flag":flag,
+                "ansid":answerid
+            }
+            $.ajax({
+                url:"http://127.0.0.1:8080/answer/like",
+                type:"POST",
+                dataType:"json",
+                data:JSON.stringify(data),
+                contentType:"application/json; charset=UTF-8",
+                success:function (data) {
+                    if(data.msg=="liked")  {
+                        // alert("liked")
+                        window.location.reload()
+                    }
+                    else if(data.msg=="canceled"){
+                        // alert("canceled")
+                        window.location.reload()
+                    }
+                },
+            })
+        })
+        //收藏回答
+        $(".answerstar").click(function () {
+            a=$(this).attr("name");
+            flag=a[0]
+            answerid=''
+            for(var key in a){
+                if(key>1){
+                    answerid=answerid+a[key]
+                }
+            }
+            console.log(answerid);
+            data={
+                "flag":flag,
+                "ansid":answerid
+            }
+            $.ajax({
+                url:"http://127.0.0.1:8080/answer/star",
+                type:"POST",
+                dataType:"json",
+                data:JSON.stringify(data),
+                contentType:"application/json; charset=UTF-8",
+                success:function (data) {
+                    if(data.msg=="stared")  {
+                        // alert("stared")
+                        window.location.reload()
+                    }
+                    else if(data.msg=="canceled"){
+                        // alert("canceled")
+                        window.location.reload()
+                    }
+                },
+            })
+        })
+        //支持
+        $(".supportit").click(function () {
+            a=$(this).attr("name")
+            flag=a[0]
+            temptopicid=''
+            for (var key in a){
+                if (key>1){
+                    temptopicid=temptopicid+a[key]
+                }
+            }
+            data={
+                "flag":flag,
+                "temptopicid":temptopicid
+            }
+        })
+        //显示申请话题进度
+        $('.probar').click(function () {
+            process=$(this).attr('name')
+            $(this).css('width',process+'0%')
+            if(process<=2){
+                $(this).addClass("progress-bar-danger ")
+            }
+            else if(process<=5){
+                $(this).addClass("progress-bar-warning")
+            }
+            else if(process<=7){
+                $(this).addClass("progress-bar-info")
+            }
+            else if(process<=10){
+                $(this).addClass("progress-bar-success")
+            }
+        })
+    })
 
+</script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
+

@@ -30,59 +30,53 @@
             -moz-box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
             box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
         }
+        .border-radius-4{
+            border-top-right-radius:4px;
+            border-top-left-radius:4px;
+            border-bottom-left-radius:4px;
+            border-bottom-right-radius:4px;
+        }
     
     </style>
 </head>
-<body style="background-color: #fafafa">
-
+<body style="background-color: #DAE0E6">
 <div class="container-fluid">
-    <div class="col-md-12 column" style="position: fixed;top: 0;z-index: 999">
-        <div class="row clearfix">
-            <div class="col-md-2 column">
-            </div>
-            <div class="col-md-8 column" style="">
-                <div class="row clearfix">
-                    <ul class="nav nav-pills shadow" style="background-color: #ffffff;margin-right: -3px;margin-left: 5px">
-                        <li class="active">
-                            <a href="http://127.0.0.1:8080/home" style="padding: 0 10px 0 10px;font-size: 28px">知</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1:8080/home">首页</a>
-                        </li>
-                        
-                        <li>
-                            <a class="text-muted" href="http://127.0.0.1:8080/topicSquare">话题</a>
-                        </li>
-                        <li style="margin-left: 60px;margin-top: 3px">
-                            <div class="input-group" style="width:342px">
-                                <input type="text"  onclick="window.location.href='http://127.0.0.1:3000/search'" class="form-control">
-                                <span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">搜索</span>
-                            </div>
-                        </li>
-                        <li class="dropdown pull-right" style="margin-top: 7px;margin-right: 8px">
-                            <span class="text-muted" name="{{myid}}" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'" style="margin-right: 18px;">消息</span>
-                            <img data-toggle="dropdown" src="http://127.0.0.1:3000/static/userhead/{{myid}}.jpg" style="width:28px">
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="http://127.0.0.1:8080/people/me/myask">个人主页</a>
-                                </li>
-                                <li class="divider">
-                                </li>
-                                <li>
-                                    <a href="http://127.0.0.1:3000/logout">退出登录</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div class="row clearfix">
+        <ul class="nav nav-pills shadow" style="height:50px;background-color: #ffffff;margin-right: 0px;margin-left: 0px">
+            <li class="active">
+                <a href="http://127.0.0.1:8080/home" style="padding: 0 10px 0 10px;font-size: 28px">知</a>
+            </li>
+            <li>
+                <a style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/home">首页</a>
+            </li>
             
-            <div class="col-md-2 column">
-            </div>
-        </div>
+            <li>
+                <a class="text-muted" style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/topicSquare">话题</a>
+            </li>
+            <li style="margin-left: 60px;margin-top: 8px">
+                <div class="input-group" style="width:342px">
+                    <input type="text"  onclick="window.location.href='http://127.0.0.1:3000/search'" class="form-control">
+                    <span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">搜索</span>
+                </div>
+            </li>
+            <li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
+                <span class="text-muted" name="{{myid}}" style="font-size:16px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'" style="margin-right: 18px;">消息</span>
+                <img data-toggle="dropdown" src="http://127.0.0.1:3000/static/userhead/{{myid}}.jpg" style="width:28px">
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="http://127.0.0.1:8080/people/me/myask">个人主页</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:3000/logout">退出登录</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
     
-    <div class="col-md-12 column" style="margin-top: 50px">
+    <div class="col-md-12 column" style="margin-top: 10px">
         <div class="row clearfix">
             <div class="col-md-2 column">
             </div>
@@ -107,8 +101,7 @@
                         <button id="submitanswer" class="btn btn-info" style="position: relative;float: right">提交问题</button>
                     </div>
                 </div>
-                {%for key in answered%}
-                <div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                <div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
                     <span style="font-weight: bold;font-size: 20px" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'">{{key.queTitle}}</span>
                     <br/>
                     <img src="http://127.0.0.1:8080/static/userhead/{{key.uid}}.jpg" style="width: 25px" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">
@@ -133,40 +126,25 @@
                         <span class="text-muted" style="margin-left: 20px;">•••</span>
                     </div>
                     <hr id="line{{key.id}}" style="display:none;margin-top: 15px;margin-bottom: 15px"/>
-                    <div id="thetopcomment" style="" name="0">
+                    <div id="thetopcomment" name="0">
                         <div class="input-group" style="margin-top: 10px;">
                             <input type="text" class="form-control">
                             <span class="input-group-addon"  onclick='var content= $(this).prev().val();var ansid=$(this).parent().parent().prev().prev().find(".comment").attr("name");datas={"ansid":ansid,"content":content,"pid":-1};$.ajax({url:"http://127.0.0.1:3000/comment/answer/submit",type:"POST",data:JSON.stringify(datas),contentType:"application/json; charset=UTF-8",dataType:"json",success:function (data) {if(data.data["msg"]=="good"){alert("评论成功")}window.location.reload() },error:function(a,b,c) {console.log(a.status+"::"+a.readyState+"::"+b) }})' style="background-color: #6db0ff;color:white;width: 50px">发表</span>
                         </div>
                     </div>
                 </div>
-                {%endfor%}
                 <br/>
                 <ul class="pagination" style="margin-left: 30px;margin-right: 30px">
-                    <li>
-                        <a href="#">Prev</a>
-                    </li>
-                    <li>
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">Next</a>
-                    </li>
+                    <li><a href="#">Prev</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">Next</a></li>
                 </ul>
             </div>
-            <div class="col-md-3 column" style=";padding: 0;margin: 2px;margin-left: 12px">
+            <div class="col-md-3 column" style="padding: 0;margin: 2px;margin-left: 12px">
                 <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
                     <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'">申请中的话题</span>
                     <span class="pull-right" style="margin-top: 12px" onclick="if($('.applytopic').css('display')=='none'){$('.applytopic').css('display','')}else{$('.applytopic').css('display','none')}"  >申请话题</span>
@@ -179,8 +157,7 @@
                     <button id="submitinfo" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交申请</button>
                     <div style="clear: both"></div>
                 </div>
-                {% for key in temptopic %}
-                <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                <div class="shadow-smaller border-radius-4" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
                     <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'">{{key.topic}}</span>
                     {%if key.isupport=="0"%}
                     <span class="pull-right supportit" name="0_{{key.id}}" style="margin-top: 5px;color: #0d83ff;background-color: #fafafa;border: solid 1px #00bfff;padding: 3px 5px 3px 5px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">支持</span>
@@ -195,7 +172,6 @@
                     </div>
                     <div style="clear: both"></div>
                 </div>
-                {% endfor %}
             </div>
             <div class="col-md-2 column">
             </div>
@@ -218,6 +194,11 @@
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
     $(document).ready(function () {
         //回答点赞
+        $(".card-essay").hover(function() {
+            $(this).css("border-color","#898989")
+        }, function() {
+            $(this).css("border-color","#CCCCCC")
+        })
         $(".anslike").click(function () {
             a=$(this).attr("name");
             console.log(a);

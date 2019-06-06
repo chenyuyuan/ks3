@@ -2,7 +2,7 @@ package com.yuan.entity;
 
 //import com.sun.istack.internal.NotNull;
 
-public class Users {
+public class User {
     private int id;
     private String account;
     private String password;
