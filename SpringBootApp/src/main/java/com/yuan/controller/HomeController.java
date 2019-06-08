@@ -1,8 +1,6 @@
 package com.yuan.controller;
 
-import com.yuan.entity.Essay;
-import com.yuan.entity.EssayContent;
-import com.yuan.entity.User;
+import com.yuan.entity.*;
 import com.yuan.service.HomeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,11 +23,10 @@ public class HomeController {
     @GetMapping(value = "/home")
     public String pageLogin(Model model) {
         String name = "yuan";
-        ArrayList<Essay> list_Essay = homeService.getAllEssay();
-        ArrayList<EssayContent> list_Essay_Content = homeService.getAllEssayContent();
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
+
         model.addAttribute("name", name);
-        model.addAttribute("essay", list_Essay);
-        model.addAttribute("essay_Content", list_Essay_Content);
-        return "test";
+        model.addAttribute("cardEssay", listCardEssay);
+        return "home";
     }
 }

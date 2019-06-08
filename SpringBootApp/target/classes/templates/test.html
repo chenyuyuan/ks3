@@ -6,10 +6,16 @@
 </head>
 <body>
     <p><span th:text="${name}"></span></p>
-    <p><span th:text="${user.account}"></span></p>
-    <p><span th:text="${user.password}"></span></p>
+    <div th:each="e:${essay}">
+	    <p><span th:text="${e.id}"></span></p>
+	    <p><span th:text="${e.head}"></span></p>
+    </div>
+    <div th:object="essay[1]">
+	    <span th:text="*{id}"></span>
+	    <p><span th:text="${obejct.head}"></span></p>
+    </div>
 </body>
-<script th:inline="javascript">
+<script>
 
 </script>
 </html>

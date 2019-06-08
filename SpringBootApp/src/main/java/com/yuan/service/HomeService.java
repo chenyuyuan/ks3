@@ -1,7 +1,6 @@
 package com.yuan.service;
 
-import com.yuan.entity.Essay;
-import com.yuan.entity.EssayContent;
+import com.yuan.entity.*;
 import com.yuan.mapper.HomeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,4 +19,8 @@ public class HomeService {
     public ArrayList<EssayContent> getAllEssayContent() {
         return homeMapper.getAllEssayContent();
     }
+    public ArrayList<User> getAllUser() {return homeMapper.getAllUser();}
+    public ArrayList<Community> getAllCommunity() {return homeMapper.getAllCommunity();}
+
+    public ArrayList<CardEssay> getAllCardEssay() {return homeMapper.getAllCardEssay();}
 }
