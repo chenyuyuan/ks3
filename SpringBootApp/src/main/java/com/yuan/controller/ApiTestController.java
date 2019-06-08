@@ -15,7 +15,7 @@ public class ApiTestController {
     StringRedisTemplate redisTemplate;
     @GetMapping("set/{key}/{value}")
     public String set(@PathVariable("key")String key, @PathVariable("value") String value) {
-        //注意这里的 key不能为null spring 内部有检验
+        //注意这里的 key不能为null spring内部有检验
         redisTemplate.opsForValue().set(key, value);
         return key + "," + value;
     }

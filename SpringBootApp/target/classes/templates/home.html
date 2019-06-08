@@ -60,7 +60,7 @@
                 </div>
             </li>
             <li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
-                <span class="text-muted" name="{{myid}}" style="font-size:16px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'" style="margin-right: 18px;">消息</span>
+                <span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">消息</span>
                 <img data-toggle="dropdown" src="http://127.0.0.1:3000/static/userhead/{{myid}}.jpg" style="width:28px">
                 <ul class="dropdown-menu">
                     <li>
@@ -102,20 +102,13 @@
                     </div>
                 </div>
                 <div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
-                    <span style="font-weight: bold;font-size: 20px" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'">{{key.queTitle}}</span>
-                    <br/>
-                    <img src="http://127.0.0.1:8080/static/userhead/{{key.uid}}.jpg" style="width: 25px" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">
-                    <span style="font-size: 18px;font-family: 'Helvetica Neue';" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">{{key.account}}</span>
-                    <span class="text-muted">,{{key.shortIntro}}</span>
-                    <p class="text-muted" style="font-size: 14px">{{key.like}}人赞同了该答案</p>
-                    <p style="font-size: 15px;line-height: 24px">{{key.content}}</p>
-                    <p class="text-muted" style="font-size: 14px">发布于{{key.time}}</p>
+                    <span style="font-size: 13px;font-family: 'Helvetica Neue';" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">u/{{key.account}}</span>
+                    <span class="text-muted" style="font-size: 13px">posted at r/{{key.community}} in {{key.time}}</span>
+                    <div style="font-size: 18px;" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'">{{key.queTitle}}</div>
+                    <div>{{key.content}}</div>
+                    <div style="height:10px"></div>
                     <div>
-                        {% if key.ilike=="0" %}
                         <span class="text-info anslike" name="0_{{key.id}}" style="background-color:#99fffb;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;">▲{{key.like}}</span>
-                        {% else %}
-                        <span class="text-info anslike" name="1_{{key.id}}" style="background-color:#00b0e4;padding:6px 12px 6px 12px;border: #31708f 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;">▲{{key.like}}</span>
-                        {% endif %}
                         <span id="comment{{key.id}}" class="text-muted comment" name="{{key.id}}" style="margin-left: 20px;">{{key.comCount}}条评论</span>
                         <span class="text-muted" style="margin-left: 20px;">分享</span>
                         {%if key.istar=="0"%}
@@ -124,13 +117,6 @@
                         <span class="text-muted answerstar" name="1_{{key.id}}" style="margin-left: 20px;">取消收藏</span>
                         {% endif %}
                         <span class="text-muted" style="margin-left: 20px;">•••</span>
-                    </div>
-                    <hr id="line{{key.id}}" style="display:none;margin-top: 15px;margin-bottom: 15px"/>
-                    <div id="thetopcomment" name="0">
-                        <div class="input-group" style="margin-top: 10px;">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon"  onclick='var content= $(this).prev().val();var ansid=$(this).parent().parent().prev().prev().find(".comment").attr("name");datas={"ansid":ansid,"content":content,"pid":-1};$.ajax({url:"http://127.0.0.1:3000/comment/answer/submit",type:"POST",data:JSON.stringify(datas),contentType:"application/json; charset=UTF-8",dataType:"json",success:function (data) {if(data.data["msg"]=="good"){alert("评论成功")}window.location.reload() },error:function(a,b,c) {console.log(a.status+"::"+a.readyState+"::"+b) }})' style="background-color: #6db0ff;color:white;width: 50px">发表</span>
-                        </div>
                     </div>
                 </div>
                 <br/>
