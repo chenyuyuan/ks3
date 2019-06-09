@@ -108,14 +108,11 @@
                     <div th:text="|${key.content}|"></div>
                     <div style="height:10px"></div>
                     <div>
-                        <span class="text-info anslike" name="0_{{key.id}}" style="background-color:#99fffb;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;">▲{{key.like}}</span>
-                        <span id="comment{{key.id}}" class="text-muted comment" name="{{key.id}}" style="margin-left: 20px;">{{key.comCount}}条评论</span>
+                        <span class="text-info anslike" name="0_{{key.id}}" th:text="${key.i_up==0?'顶':'已顶'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+                        <span class="text-info anslike" name="0_{{key.id}}" th:text="${key.i_down==0?'踩':'已踩'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+                        <span id="comment{{key.id}}" th:text="|${key.comment_count}条评论|" class="text-muted comment" name="{{key.id}}" style="margin-left: 20px;"></span>
                         <span class="text-muted" style="margin-left: 20px;">分享</span>
-                        {%if key.istar=="0"%}
-                        <span class="text-muted answerstar" name="0_{{key.id}}" style="margin-left: 20px;">收藏</span>
-                        {% elif key.istar=="1" %}
-                        <span class="text-muted answerstar" name="1_{{key.id}}" style="margin-left: 20px;">取消收藏</span>
-                        {% endif %}
+                        <span class="text-muted answerstar" th:text="${key.i_star==0?'收藏':'已收藏'}" name="0_{{key.id}}" style="margin-left: 20px;"></span>
                         <span class="text-muted" style="margin-left: 20px;">•••</span>
                     </div>
                 </div>
@@ -143,13 +140,9 @@
                     <button id="submitinfo" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交申请</button>
                     <div style="clear: both"></div>
                 </div>
-                <div class="shadow-smaller border-radius-4" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
-                    <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'">{{key.topic}}</span>
-                    {%if key.isupport=="0"%}
-                    <span class="pull-right supportit" name="0_{{key.id}}" style="margin-top: 5px;color: #0d83ff;background-color: #fafafa;border: solid 1px #00bfff;padding: 3px 5px 3px 5px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">支持</span>
-                    {%elif key.isupport=="1"%}
-                    <span class="pull-right supportit" name="1_{{key.id}}" style="margin-top: 5px;color: #0d83ff;background-color: #fafafa;border: solid 1px #00bfff;padding: 3px 5px 3px 5px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">取消</span>
-                    {%endif%}
+                <div th:each="key:${cardApplyCommunity}" class="shadow-smaller border-radius-4" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                    <span th:text="${key.name}" style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'"></span>
+                    <span th:text="${key.i_support_community==0?'支持':'取消'}" class="pull-right supportit" name="0_{{key.id}}" style="margin-top: 5px;color: #0d83ff;background-color: #fafafa;border: solid 1px #00bfff;padding: 3px 5px 3px 5px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; "></span>
                     <span style="margin-top: 12px">{{key.topicIntro}}</span>
                     <div class="progress">
                         <div class="progress-bar probar" name="{{key.support}}" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">

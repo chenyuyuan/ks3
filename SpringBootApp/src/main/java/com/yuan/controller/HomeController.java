@@ -24,9 +24,12 @@ public class HomeController {
     public String pageLogin(Model model) {
         String name = "yuan";
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
+        ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
+
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
+        model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
         return "home";
     }
 }

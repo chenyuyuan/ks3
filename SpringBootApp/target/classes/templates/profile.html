@@ -36,9 +36,9 @@
 <body style="background-color: #fafafa">
 <div class="container-fluid">
     <div class="row clearfix">
-        <ul class="nav nav-pills shadow" style="height:50px;background-color: #ffffff;margin-right: -3px;margin-left: 5px">
+        <ul class="nav nav-pills shadow" style="height:50px;background-color: #ffffff;margin-right: 0px;margin-left: 0px">
             <li class="active">
-                <a href="http://127.0.0.1:8080/home" style="padding: 0 10px 0 10px;font-size: 28px">知</a>
+                <a href="http://127.0.0.1:8080/home" style="padding: 0 12px 0 12px;font-size: 28px">R</a>
             </li>
             <li>
                 <a style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/home">首页</a>
@@ -54,8 +54,8 @@
                 </div>
             </li>
             <li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
-                <span class="text-muted" name="{{myid}}" style="font-size:16px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'" style="margin-right: 18px;">消息</span>
-                <img data-toggle="dropdown" src="http://127.0.0.1:3000/static/userhead/{{myid}}.jpg" style="width:28px">
+                <span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">消息</span>
+                <span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">我的</span>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="http://127.0.0.1:8080/people/me/myask">个人主页</a>
@@ -185,107 +185,6 @@
     </div>
 </div>
 <script type="text/javascript" charset="UTF-8">
-    function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
-    $(document).ready(function () {
-        //回答点赞
-        $(".anslike").click(function () {
-            a=$(this).attr("name");
-            console.log(a);
-            flag=a[0]
-            answerid=''
-            for(var key in a){
-                if(key>1){
-                    answerid=answerid+a[key]
-                }
-            }
-            data={
-                "flag":flag,
-                "ansid":answerid
-            }
-            $.ajax({
-                url:"http://127.0.0.1:8080/answer/like",
-                type:"POST",
-                dataType:"json",
-                data:JSON.stringify(data),
-                contentType:"application/json; charset=UTF-8",
-                success:function (data) {
-                    if(data.msg=="liked")  {
-                        // alert("liked")
-                        window.location.reload()
-                    }
-                    else if(data.msg=="canceled"){
-                        // alert("canceled")
-                        window.location.reload()
-                    }
-                },
-            })
-        })
-        //收藏回答
-        $(".answerstar").click(function () {
-            a=$(this).attr("name");
-            flag=a[0]
-            answerid=''
-            for(var key in a){
-                if(key>1){
-                    answerid=answerid+a[key]
-                }
-            }
-            console.log(answerid);
-            data={
-                "flag":flag,
-                "ansid":answerid
-            }
-            $.ajax({
-                url:"http://127.0.0.1:8080/answer/star",
-                type:"POST",
-                dataType:"json",
-                data:JSON.stringify(data),
-                contentType:"application/json; charset=UTF-8",
-                success:function (data) {
-                    if(data.msg=="stared")  {
-                        // alert("stared")
-                        window.location.reload()
-                    }
-                    else if(data.msg=="canceled"){
-                        // alert("canceled")
-                        window.location.reload()
-                    }
-                },
-            })
-        })
-        //支持
-        $(".supportit").click(function () {
-            a=$(this).attr("name")
-            flag=a[0]
-            temptopicid=''
-            for (var key in a){
-                if (key>1){
-                    temptopicid=temptopicid+a[key]
-                }
-            }
-            data={
-                "flag":flag,
-                "temptopicid":temptopicid
-            }
-        })
-        //显示申请话题进度
-        $('.probar').click(function () {
-            process=$(this).attr('name')
-            $(this).css('width',process+'0%')
-            if(process<=2){
-                $(this).addClass("progress-bar-danger ")
-            }
-            else if(process<=5){
-                $(this).addClass("progress-bar-warning")
-            }
-            else if(process<=7){
-                $(this).addClass("progress-bar-info")
-            }
-            else if(process<=10){
-                $(this).addClass("progress-bar-success")
-            }
-        })
-    })
 
 </script>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>

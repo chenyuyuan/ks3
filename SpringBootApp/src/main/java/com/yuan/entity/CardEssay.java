@@ -17,6 +17,10 @@ public class CardEssay {
 
     private int comment_count;
 
+    private int i_up;
+    private int i_down;
+    private int i_star;
+
     public int getId() {
         return id;
     }
@@ -103,5 +107,29 @@ public class CardEssay {
 
     public void setComment_count(int comment_count) {
         this.comment_count = comment_count;
+    }
+
+    public int getI_up() {
+        return i_up;
+    }
+
+    public void setI_up(int i_up) {
+        this.i_up = i_up;
+    }
+
+    public int getI_down() {
+        return i_down;
+    }
+
+    public void setI_down(int i_down) {
+        this.i_down = i_down;
+    }
+
+    public int getI_star() {
+        return i_star;
+    }
+
+    public void setI_star(int i_star) {
+        this.i_star = i_star;
     }
 }
