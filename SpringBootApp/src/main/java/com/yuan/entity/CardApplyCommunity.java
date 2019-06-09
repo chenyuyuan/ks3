@@ -7,6 +7,7 @@ public class CardApplyCommunity {
     private String apply_user_account;
     private int support_number;
     private int i_support_community;
+    private String introduction;
 
     public int getId() {
         return id;
@@ -54,5 +55,13 @@ public class CardApplyCommunity {
 
     public void setI_support_community(int i_support_community) {
         this.i_support_community = i_support_community;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
     }
 }

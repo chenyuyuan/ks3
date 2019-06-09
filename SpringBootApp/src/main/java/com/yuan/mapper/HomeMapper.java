@@ -33,7 +33,7 @@ public interface HomeMapper {
             "ORDER BY post_date DESC")
     ArrayList<CardEssay> getAllCardEssay();
 
-    @Select("SELECT apply_community.id, name, user_id AS apply_user_id, support_number,\n" +
+    @Select("SELECT apply_community.id, name, user_id AS apply_user_id, support_number,introduction,\n" +
             "(SELECT account FROM user WHERE id = user_id) AS apply_user_account,\n" +
             "(SELECT count(*) FROM apply_community_support_user \n" +
             "WHERE apply_community_support_user.user_id = 2 AND apply_community_support_user.apply_community_id = apply_community.id\n" +
