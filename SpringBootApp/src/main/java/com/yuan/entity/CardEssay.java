@@ -1,6 +1,10 @@
 package com.yuan.entity;
 
-public class CardEssay {
+import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class CardEssay implements Serializable {
     private int id;
     private String head;
     private int user_id;
@@ -131,5 +135,18 @@ public class CardEssay {
 
     public void setI_star(int i_star) {
         this.i_star = i_star;
+    }
+
+    public static double getHot(int up, int down, String post_date) throws ParseException {
+        double ans=0;
+        int x = up - down;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String timeThen = String.valueOf(simpleDateFormat.parse(post_date).getTime());
+        int t = ((int)(System.currentTimeMillis()) - (int)(Long.parseLong(timeThen))) / 1000;
+        int z=(Math.abs(x)>1)?Math.abs(x):1;
+        int y=0;
+        if(x>0)y=1;else if(x<0)y=-1;else y=0;
+        ans = Math.log10(z) + ((double)y*(double)t)/4500;
+        return ans;
     }
 }

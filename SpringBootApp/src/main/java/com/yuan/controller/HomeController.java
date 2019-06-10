@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 public class HomeController {
@@ -23,23 +23,98 @@ public class HomeController {
     private HomeService homeService;
 
     @GetMapping(value = "/home")
-    public String pageLogin(Model model, HttpServletRequest request) {
+    public String pageHome(Model model, HttpServletRequest request) {
         String name = "yuan";
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
 
-
         HttpSession session = request.getSession();
-
         String account = (String)session.getAttribute("account");
-
         System.out.println(session.getId());
         System.out.println(name);
-
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
         model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
         return "home";
     }
+
+    @GetMapping(value = "/home/like")
+    public String pageHomeLike(Model model, HttpServletRequest request) {
+        String name = "yuan";
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
+        ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
+
+        Collections.sort(listCardEssay, new Comparator<CardEssay>() {
+            @Override
+            public int compare(CardEssay o1, CardEssay o2) {
+                if(o1.getUp() <= o2.getUp()) {
+                    return 1;
+                }
+                else {
+                    return -1;
+                }
+            }
+        });
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        System.out.println(session.getId());
+        System.out.println(name);
+
+        model.addAttribute("name", name);
+        model.addAttribute("cardEssay", listCardEssay);
+        model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
+        return "home";
+    }
+    @GetMapping(value = "/home/hot")
+    public String pageHomeHot(Model model, HttpServletRequest request) {
+        String name = "yuan";
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
+        ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
+
+        Collections.sort(listCardEssay, new Comparator<CardEssay>() {
+            @Override
+            public int compare(CardEssay o1, CardEssay o2) {
+                double hot1,hot2;
+                try {
+                    hot1=o1.getHot(o1.getUp(),o1.getDown(),o1.getPost_date());
+                    hot2=o2.getHot(o2.getUp(),o2.getDown(),o2.getPost_date());
+                    System.out.println("hot1:"+hot1);
+                    System.out.println("hot2:"+hot2);
+                    if( hot1 <= hot2) {
+                        return 1;
+                    }
+                    else {
+                        return -1;
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                return 1;
+            }
+        });
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        System.out.println(session.getId());
+        System.out.println(name);
+
+        model.addAttribute("name", name);
+        model.addAttribute("cardEssay", listCardEssay);
+        model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
+        return "home";
+    }
+
+    public static double getHot(int up, int down, String post_date) throws ParseException{
+        double ans=0;
+        int x = up - down;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String timeThen = String.valueOf(simpleDateFormat.parse(post_date).getTime());
+        int t = ((int)(System.currentTimeMillis()) - (int)(Long.parseLong(timeThen))) / 1000;
+        int z=(Math.abs(x)>1)?Math.abs(x):1;
+        int y=0;
+        if(x>0)y=1;else if(x<0)y=-1;else y=0;
+        ans = Math.log10(z) + ((double)y*(double)t)/4500;
+        return ans;
+    }
+
 }
