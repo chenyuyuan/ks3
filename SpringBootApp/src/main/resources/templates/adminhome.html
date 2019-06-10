@@ -83,7 +83,7 @@
         <div class="row clearfix">
             <div class="col-md-2 column">
             </div>
-            <div class="col-md-5 column" style="padding:0;margin: 2px">
+            <div class="col-md-8 column" style="padding:0;margin: 2px">
                 
                 <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
                     <span id="toanswer" style="border: #f3f3f3 solid 0px;background-color: #ffffff;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;"></span>
@@ -126,31 +126,8 @@
                     <li><a href="#">Next</a></li>
                 </ul>
             </div>
-            <div class="col-md-3 column" style="padding: 0;margin: 2px;margin-left: 12px">
-                <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
-                    <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'">申请中的话题</span>
-                    <span class="pull-right" style="margin-top: 12px" onclick="if($('.applytopic').css('display')=='none'){$('.applytopic').css('display','')}else{$('.applytopic').css('display','none')}"  >申请话题</span>
-                    <div style="clear: both"></div>
-                </div>
-                <div class="shadow-smaller applytopic" style="display: none;margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
-                    <input id="topic" type="text" class="form-control center-block" placeholder="话题名称" style="width:300px;height: 48px">
-                    <input id="topicintro" type="text" class="form-control center-block" placeholder="话题简介" style="width:300px;height: 48px;border-top: 0px">
-                    <p id="tips" class="text-center text-muted" style="margin-top: 10px"></p>
-                    <button id="submitinfo" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交申请</button>
-                    <div style="clear: both"></div>
-                </div>
-                <div th:each="key:${cardApplyCommunity}" class="shadow-smaller border-radius-4" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
-                    <span th:text="${key.name}" style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'"></span>
-                    <span th:text="${key.i_support_community==0?'支持':'取消'}" class="pull-right supportit" name="0_{{key.id}}" style="margin-top: 5px;color: #0d83ff;background-color: #fafafa;border: solid 1px #00bfff;padding: 3px 5px 3px 5px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; "></span>
-                    <span th:text="${key.introduction}" style="margin-top: 12px"></span>
-                    <div class="progress">
-                        <div class="progress-bar probar" name="{{key.support}}" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-                            <span class="sr-only">{{key.support*10}}</span>
-                        </div>
-                    </div>
-                    <div style="clear: both"></div>
-                </div>
-            </div>
+            <!--<div class="col-md-3 column" style="padding: 0;margin: 2px;margin-left: 12px">
+            </div>-->
             <div class="col-md-2 column">
             </div>
         </div>

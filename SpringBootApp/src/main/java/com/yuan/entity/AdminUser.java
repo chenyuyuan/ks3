@@ -2,8 +2,8 @@ package com.yuan.entity;
 
 public class AdminUser {
     private int id;
-    private String admin_name;
-    private String admin_pwd;
+    private String account;
+    private String password;
 
     public int getId() {
         return id;
@@ -13,19 +13,19 @@ public class AdminUser {
         this.id = id;
     }
 
-    public String getAdmin_name() {
-        return admin_name;
+    public String getAccount() {
+        return account;
     }
 
-    public void setAdmin_name(String admin_name) {
-        this.admin_name = admin_name;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
-    public String getAdmin_pwd() {
-        return admin_pwd;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAdmin_pwd(String admin_pwd) {
-        this.admin_pwd = admin_pwd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
