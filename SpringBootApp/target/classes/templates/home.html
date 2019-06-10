@@ -175,7 +175,12 @@
         window.location.href="http://localhost:8080/essay/"+essayid
     }
     $(document).ready(function () {
-    
+        $(".card-essay").hover(function() {
+            $(this).css("border-color","#898989")
+        }, function() {
+            $(this).css("border-color","#CCCCCC")
+        })
+        
     })
 
 </script>

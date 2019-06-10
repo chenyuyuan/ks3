@@ -18,7 +18,7 @@ public interface PostMapper {
     ArrayList<CardFollowCommunity> getAllFollowCommunity();
 
     @Insert("INSERT INTO essay (head,user_id,community_id) VALUES (#{head},2,#{community_id})")
-    void postEssay(@Param("head") String head,@Param("communty_id") int community_id);
+    void postEssay(@Param("head") String head,@Param("community_id") int community_id);
 
     @Select("SELECT max(id) FROM essay")
     int maxidInEssay();

@@ -51,12 +51,12 @@
 			<li style="margin-left: 60px;margin-top: 8px">
 				<div class="input-group" style="width:342px">
 					<input type="text"  onclick="window.location.href='http://127.0.0.1:3000/search'" class="form-control">
-					<span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">搜索</span>
+					<span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='#'">搜索</span>
 				</div>
 			</li>
 			<li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
 				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">消息</span>
-				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">我的</span>
+				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='#'">我的</span>
 				<ul class="dropdown-menu">
 					<li>
 						<a href="http://127.0.0.1:8080/people/me/myask">个人主页</a>
@@ -71,16 +71,18 @@
 		</ul>
 	</div>
 	
-	<div class="col-md-12 column" style="margin-top: 50px">
+	<div class="col-md-12 column" style="margin-top: 30px">
 		<div class="row clearfix">
 			<div class="col-md-1 column">
 			</div>
 			<div class="col-md-7 column" style="padding:0;margin: 2px">
 				<div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
 					<input id="post_head" type="text" style="margin-top:16px;width:400px" class="form-control" placeholder="标题">
-					<input id="post_content" type="text" style="margin-top:16px" class="form-control" placeholder="内容">
-					<div style="margin-top:16px" th:each="key:${CardFollowCommunity}">
-						<span th:onclick="'javascript:setCommunityId(\''+${key.community_id}+'\')'" class="text-info anslike" name="0_{{key.id}}" th:text="${key.community_name}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+					<textarea id="post_content" type="" style="height:200px;margin-top:16px" class="form-control" placeholder="内容"></textarea>
+					<div style="height: 75px;">
+						<div style="margin-left:10px;margin-top:16px;float: left;" th:each="key:${CardFollowCommunity}">
+							<span th:onclick="'javascript:setCommunityId(\''+${key.community_id}+'\')'" class="text-info anslike" name="0_{{key.id}}" th:text="${key.community_name}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+						</div>
 					</div>
 					<button id="post_button" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交</button>
 				</div>

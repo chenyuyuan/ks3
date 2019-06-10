@@ -36,6 +36,7 @@ public class ApiPostController {
 
         System.out.println("posting");
 
+        System.out.println("head:"+head+",content:"+content+",community_id:"+community_id);
         postService.postEssay(head,community_id);
         int maxId = postService.maxidInEssay();
         postService.postEssayContent(maxId,content);

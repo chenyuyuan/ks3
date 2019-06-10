@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    
+    <style>
+        textarea:focus{
+            outline: 0;
+        }
+        .btn:focus,.btn:active:focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn.active.focus {
+            outline: none;
+            border-color: transparent;
+            box-shadow:none;
+        }
+        .shadow{
+            -webkit-box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+            -moz-box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+            box-shadow: 0 1px 5px 0 rgba(0,34,77,.12);
+        }
+        .shadow-smaller{
+            -webkit-box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+            -moz-box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+            box-shadow: 0 1px 5px 0 rgba(0,34,77,.07);
+        }
+    
+    </style>
+</head>
+<body style="background-color: #fafafa">
+<div class="container-fluid">
+    <div class="row clearfix">
+        <ul class="nav nav-pills shadow" style="height:50px;background-color: #ffffff;margin-right: 0px;margin-left: 0px">
+            <li class="active">
+                <a href="http://127.0.0.1:8080/home" style="padding: 0 12px 0 12px;font-size: 28px">R</a>
+            </li>
+            <li>
+                <a style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/home">首页</a>
+            </li>
+            
+            <li>
+                <a class="text-muted" style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/topicSquare">话题</a>
+            </li>
+            <li style="margin-left: 60px;margin-top: 8px">
+                <div class="input-group" style="width:342px">
+                    <input type="text"  onclick="window.location.href='http://127.0.0.1:3000/search'" class="form-control">
+                    <span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">搜索</span>
+                </div>
+            </li>
+            <li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
+                <span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">消息</span>
+                <span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">我的</span>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="http://127.0.0.1:8080/people/me/myask">个人主页</a>
+                    </li>
+                    <li class="divider">
+                    </li>
+                    <li>
+                        <a href="http://127.0.0.1:3000/logout">退出登录</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="col-md-12 column" style="margin-top: 10px">
+        <div class="row clearfix">
+            <div class="col-md-2 column">
+            </div>
+            <div class="col-md-5 column" style="padding:0;margin: 2px">
+                
+                <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                    <span id="toanswer" style="border: #f3f3f3 solid 0px;background-color: #ffffff;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;"></span>
+                    <span onclick="window.location.href='http://127.0.0.1:8080/home'" class="" style="font-weight: bold;margin-left: 22px;color:#77839c;margin-right: 40px">按时间</span>
+                    <span onclick="window.location.href='http://127.0.0.1:8080/home/like'" style="margin-left: 120px;border: #0084ff solid 0px;background-color: white;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;">赞最多</span>
+                    <span onclick="window.location.href='http://127.0.0.1:8080/home/com'" class="pull-right" style="margin-left: 22px;color:#77839c;margin-right: 40px">评论最多</span>
+                    <!--<span style="margin-left: 22px;color: #77839c">•••</span>-->
+                </div>
+                <div id='answering' style="display: none">
+                    <div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                        <img src="http://127.0.0.1:8080/static/userhead/1.jpg" style="width: 25px"/>
+                        <span>chenyuyuan</span>
+                    </div>
+                    <div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                        <textarea style="width: 100%;height: 100px;border: 0;" onclick="if($(this).val()=='写回答..'){$(this).val('')}">写回答..</textarea>
+                    </div>
+                    <div class="shadow-smaller" style="height:64px;background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                        <button id="submitanswer" class="btn btn-info" style="position: relative;float: right">提交问题</button>
+                    </div>
+                </div>
+                <div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
+                    <input id="input_old_pwd" type="password" class="form-control center-block" placeholder="请输入旧密码" style="width:300px;height: 48px">
+                    <input id="input_new_pwd" type="password" class="form-control center-block" placeholder="请输入新密码" style="width:300px;height: 48px">
+                    <input id="input_new_pwd_again" type="password" class="form-control center-block" placeholder="请再次输入密码" style="width:300px;height: 48px">
+                    <p id="tips" class="text-center text-muted" style="margin-top: 10px"></p>
+                    <button id="login" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">确认修改</button>
+                </div>
+                <br/>
+            </div>
+            <div class="col-md-3 column" style="padding: 0;margin: 2px;margin-left: 12px">
+            
+            </div>
+            <div class="col-md-2 column">
+            </div>
+        </div>
+        <hr style="margin: 20px;">
+        <div class="row clearfix">
+            <div class="col-md-2 column">
+            </div>
+            <div class="col-md-5 column">
+                <address> <strong>hit.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA 94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+            </div>
+            <div class="col-md-3 column">
+            </div>
+            <div class="col-md-2 column">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="UTF-8">
+
+</script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+
