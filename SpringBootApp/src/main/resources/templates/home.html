@@ -123,10 +123,6 @@
                 <ul class="pagination" style="margin-left: 30px;margin-right: 30px">
                     <li><a href="#">Prev</a></li>
                     <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
                     <li><a href="#">Next</a></li>
                 </ul>
             </div>
@@ -185,105 +181,7 @@
         }, function() {
             $(this).css("border-color","#CCCCCC")
         })
-        $(".anslike").click(function () {
-            a=$(this).attr("name");
-            console.log(a);
-            flag=a[0]
-            answerid=''
-            for(var key in a){
-                if(key>1){
-                    answerid=answerid+a[key]
-                }
-            }
-            data={
-                "flag":flag,
-                "ansid":answerid
-            }
-            $.ajax({
-                url:"http://127.0.0.1:8080/answer/like",
-                type:"POST",
-                dataType:"json",
-                data:JSON.stringify(data),
-                contentType:"application/json; charset=UTF-8",
-                success:function (data) {
-                    if(data.msg=="liked")  {
-                        // alert("liked")
-                        window.location.reload()
-                    }
-                    else if(data.msg=="canceled"){
-                        // alert("canceled")
-                        window.location.reload()
-                    }
-                },
-            })
-        })
-        //收藏回答
-        $(".answerstar").click(function () {
-            a=$(this).attr("name");
-            flag=a[0]
-            answerid=''
-            for(var key in a){
-                if(key>1){
-                    answerid=answerid+a[key]
-                }
-            }
-            console.log(answerid);
-            data={
-                "flag":flag,
-                "ansid":answerid
-            }
-            $.ajax({
-                url:"http://127.0.0.1:8080/answer/star",
-                type:"POST",
-                dataType:"json",
-                data:JSON.stringify(data),
-                contentType:"application/json; charset=UTF-8",
-                success:function (data) {
-                    if(data.msg=="stared")  {
-                        // alert("stared")
-                        window.location.reload()
-                    }
-                    else if(data.msg=="canceled"){
-                        // alert("canceled")
-                        window.location.reload()
-                    }
-                },
-            })
-        })
-        //支持
-        $(".supportit").click(function () {
-            a=$(this).attr("name")
-            flag=a[0]
-            temptopicid=''
-            for (var key in a){
-                if (key>1){
-                    temptopicid=temptopicid+a[key]
-                }
-            }
-            data={
-                "flag":flag,
-                "temptopicid":temptopicid
-            }
-            $.ajax({
-                type:'POST',
-                url:'http://127.0.0.1:3000/home/supporting',
-                contentType: 'application/json; charset=UTF-8',
-                data:JSON.stringify(data),
-                dataType:'json',
-                success:function (data) {
-                    if(data.msg=="finished"){
-                        alert("话题创建成功")
-                        window.location.reload()
-                    }
-                    if (data.msg=="supported"){
-                        window.location.reload()
-                    }
-                    else if(data.msg=="canceled"){
-                        window.location.reload()
-                    }
-                }
-            })
-        })
+        
         //显示申请话题进度
         $('.probar').click(function () {
             process=$(this).attr('name')

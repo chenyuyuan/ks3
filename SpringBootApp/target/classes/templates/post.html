@@ -77,7 +77,12 @@
 			</div>
 			<div class="col-md-7 column" style="padding:0;margin: 2px">
 				<div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
-				
+					<input id="post_head" type="text" style="margin-top:16px;width:400px" class="form-control" placeholder="标题">
+					<input id="post_content" type="text" style="margin-top:16px" class="form-control" placeholder="内容">
+					<div style="margin-top:16px" th:each="key:${CardFollowCommunity}">
+						<span th:onclick="'javascript:setCommunityId(\''+${key.community_id}+'\')'" class="text-info anslike" name="0_{{key.id}}" th:text="${key.community_name}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+					</div>
+					<button id="post_button" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交</button>
 				</div>
 				<br/>
 			</div>
@@ -103,7 +108,42 @@
 </div>
 <script type="text/javascript" charset="UTF-8">
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
+    
+    var thisCommunityId=0;
+    
+    function setCommunityId(community_id) {
+        thisCommunityId=community_id
+	    alert(thisCommunityId)
+    }
+    
     $(document).ready(function () {
+        //post_button
+        $("#post_button").click(function () {
+            
+            data={
+                "head":$("#post_head").val(),
+                "content":$("#post_content").val(),
+                "community_id":thisCommunityId
+            }
+            $.ajax({
+                url:"http://127.0.0.1:8080/api/post",
+                type:"POST",
+                dataType:"json",
+                data:JSON.stringify(data),
+                contentType:"application/json; charset=UTF-8",
+                success:function (data) {
+                    if(data.msg=="success")  {
+                        // alert("liked")
+                        alert("发布成功！")
+                    }
+                    else if(data.msg=="failed"){
+                        // alert("canceled")
+                        window.location.reload()
+                    }
+                },
+            })
+        })
+	    
         //回答点赞
         $(".anslike").click(function () {
             a=$(this).attr("name");

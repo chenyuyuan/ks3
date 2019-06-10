@@ -77,7 +77,12 @@
 			</div>
 			<div class="col-md-7 column" style="padding:0;margin: 2px">
 				<div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
-				
+					<input id="post_head" type="text" style="margin-top:16px;width:400px" class="form-control" placeholder="标题">
+					<input id="post_content" type="text" style="margin-top:16px" class="form-control" placeholder="内容">
+					<div style="margin-top:16px" th:each="key:${CardFollowCommunity}">
+						<span th:onclick="'javascript:setCommunityId(\''+${key.community_id}+'\')'" class="text-info anslike" name="0_{{key.id}}" th:text="${key.community_name}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+					</div>
+					<button id="post_button" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交</button>
 				</div>
 				<br/>
 			</div>
@@ -103,7 +108,42 @@
 </div>
 <script type="text/javascript" charset="UTF-8">
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
+    
+    var thisCommunityId=0;
+    
+    function setCommunityId(community_id) {
+        thisCommunityId=community_id
+	    alert(thisCommunityId)
+    }
+    
     $(document).ready(function () {
+        //post_button
+        $("#post_button").click(function () {
+            
+            data={
+                "head":$("#post_head").val(),
+                "content":$("#post_content").val(),
+                "community_id":thisCommunityId
+            }
+            $.ajax({
+                url:"http://127.0.0.1:8080/api/post",
+                type:"POST",
+                dataType:"json",
+                data:JSON.stringify(data),
+                contentType:"application/json; charset=UTF-8",
+                success:function (data) {
+                    if(data.msg=="success")  {
+                        // alert("liked")
+                        alert("发布成功！")
+                    }
+                    else if(data.msg=="failed"){
+                        // alert("canceled")
+                        window.location.reload()
+                    }
+                },
+            })
+        })
+	    
         //回答点赞
         $(".anslike").click(function () {
             a=$(this).attr("name");
@@ -281,112 +321,8 @@
                 }
             })
         })
-        $(".comment").on("click",function () {
-            var kingdom=$(this).parent().next().next();
-            var pt = new ParentTree();
-            ansid=$(this).attr("name")//得到点击的回答id
-            //alert(ansid)
-            if(kingdom.attr("name")=="0"){
-                kingdom.attr("name","1")
-                //kingdom.css("display","")
-                var data={
-                    "ansid":ansid
-                }
-                $.ajax({
-                    url:'http://127.0.0.1:3000/comment/answer',
-                    type:'POST',
-                    contentType: 'application/json; charset=UTF-8',
-                    dataType:'json',
-                    data:JSON.stringify(data),
-                    success:function (data) {
-                        if(data.msg=='1'){
-
-                            newdata=data.data;
-                            //console.log(newdata)
-                            for(var key in newdata){
-                                for(var king in newdata){
-                                    if(newdata[key].pid==-1){
-                                        pt.nodes.push(new ParentTreeNode(newdata[key], -1));
-                                        break;
-                                    }
-                                    else if(newdata[king].id==newdata[key].pid){
-                                        pt.nodes.push(new ParentTreeNode(newdata[key], king));
-                                        break;
-                                    }
-                                }
-                            }
-                            maxDepth=0;
-                            data={
-                                "ansid":ansid,
-
-                            }
-                            console.log("data.ansid:"+data.ansid)
-                            //alert(ansid)
-
-                            //console.log(pt.nodes[1].data)
-                            for(var i=0;i<pt.nodes.length;i++){
-                                depth=0;
-                                for (var j=i; j!=-1;j=pt.nodes[j].parent){
-                                    depth=depth+1;
-                                }
-                                if(depth>maxDepth)maxDepth=depth
-                            }
-                            commentinput="                        <div class=\"input-group\" style=\"margin-top: 10px;\">\n" +
-                                "                            <input type=\"text\" class=\"form-control\">\n" +
-                                "                            <span class=\"input-group-addon commentsubmit\" onclick='k=$(this); var a= $(this).prev().val();var b=$(this).parent().parent().attr(\"name\");datas={\"ansid\":ansid,\"content\":a,\"pid\":b};$.ajax({url:\"http://127.0.0.1:3000/comment/answer/submit\",type:\"POST\",data:JSON.stringify(datas),contentType:\"application/json; charset=UTF-8\",dataType:\"json\",success:function (data) {if(data.data.msg==\"good\"){alert(\"回复成功\")}window.location.reload() },error:function(a,b,c) {console.log(a.status+\"::\"+a.readyState+\"::\"+b) }})' style=\"background-color: #6db0ff;color:white;width: 50px\">回复</span>\n" +
-                                "                        </div>"
-                            for(var i in pt.nodes){
-                                if(pt.nodes[i].parent==-1){
-                                    kingdom.append("<div class='parent' name=\""+i+"\" style=\"background-color: #fafafa;margin-top: 10px;border:1px solid #eeeeee;padding: 7px;border-top-right-radius:8px; border-top-left-radius:8px; border-bottom-left-radius:8px; border-bottom-right-radius:8px;\">\n" +
-                                        "        <div name=\""+pt.nodes[i].data.id+"\">\n" +
-                                        "            <img src=\"http://127.0.0.1:3000/static/userhead/"+pt.nodes[i].data.uid+".jpg\" style=\"width: 15px\">\n" +
-                                        "            <span>"+pt.nodes[i].data.account+":</span>\n" +
-                                        "            <span>"+pt.nodes[i].data.content+"</span>\n" +
-                                        "            <img class='replyanscomment' name='0' src=\"http://127.0.0.1:3000/static/material/reply.jpg\" onclick='if($(this).attr(\"name\")==\"0\"){$(this).parent().append(commentinput);$(this).attr(\"name\",\"1\")}else{if($(this).next().next().next().css(\"display\")==\"none\"){$(this).next().next().next().css(\"display\",\"\")}else{$(this).next().next().next().css(\"display\",\"none\")}}' width=\"13px\" style='margin-left: 5px'>\n" +
-                                        "            <img class='tipoffanscomment' src=\"http://127.0.0.1:3000/static/material/tipoff.png\" onclick='var  id=$(this).parent().attr(\"name\"); datas={\"anscomment\":id};$.ajax({url:\"http://127.0.0.1:3000/comment/answer/tipoff\",type:\"POST\",data:JSON.stringify(datas),contentType:\"application/json; charset=UTF-8\",dataType:\"json\",success:function(data) { if(data.msg==\"good\"){alert(\"已举报\")} },error:function(a,b,c) {console.log(a.status+\"::\"+a.readyState+\"::\"+b) }})' width=\"13px\" style='margin-left: 5px'>\n" +
-                                        "            <span class=\"pull-right\">"+pt.nodes[i].data.time+"</span>" +
-                                        "        </div>\n" +
-                                        "    </div>")
-                                    pt.nodes[i].parent=-2
-                                }
-                            }
-                            for (var i=0;i<maxDepth+3;i++){
-                                for (var p=0;p<pt.nodes.length;p++){
-                                    kingdom.find("div[name='"+pt.nodes[p].parent+"'].parent").append("<div class='parent' name=\""+p+"\" style=\"background-color: #fafafa;margin-top: 10px;border:1px solid #eeeeee;padding: 7px;border-top-right-radius:8px; border-top-left-radius:8px; border-bottom-left-radius:8px; border-bottom-right-radius:8px;\">\n" +
-                                        "        <div name=\""+pt.nodes[p].data.id+"\">\n" +
-                                        "            <img src=\"http://127.0.0.1:3000/static/userhead/"+pt.nodes[p].data.uid+".jpg\" style=\"width: 15px\" style='margin-left: 5px'>\n" +
-                                        "            <span>"+pt.nodes[p].data.account+":</span>\n" +
-                                        "            <span>"+pt.nodes[p].data.content+"</span>\n" +
-                                        "            <img class='replyanscomment' name='0' src=\"http://127.0.0.1:3000/static/material/reply.jpg\" onclick='if($(this).attr(\"name\")==\"0\"){$(this).parent().append(commentinput);$(this).attr(\"name\",\"1\")}else{if($(this).next().next().next().css(\"display\")==\"none\"){$(this).next().next().next().css(\"display\",\"\")}else{$(this).next().next().next().css(\"display\",\"none\")}}' style='margin-left: 5px'>\n" +
-                                        "            <img class='tipoffanscomment' src=\"http://127.0.0.1:3000/static/material/tipoff.png\" onclick='var  id=$(this).parent().attr(\"name\"); datas={\"anscomment\":id};$.ajax({url:\"http://127.0.0.1:3000/comment/answer/tipoff\",type:\"POST\",data:JSON.stringify(datas),contentType:\"application/json; charset=UTF-8\",dataType:\"json\",success:function(data) { if(data.msg==\"good\"){alert(\"已举报\")} },error:function(a,b,c) {console.log(a.status+\"::\"+a.readyState+\"::\"+b) }})' width=\"13px\" style='margin-left: 5px'>\n" +
-                                        "            <span class=\"pull-right\">"+pt.nodes[p].data.time+"</span>" +
-                                        "        </div>\n" +
-                                        "    </div>")
-                                    pt.nodes[p].parent=-2
-                                }
-                            }
-                        }
-                        else{
-                            console.log("This answer have no comments")
-                        }
-
-                    },
-                    error:function (e) {alert(e.status)}
-                })
-            }
-            else if(kingdom.css("display")=="none"&&kingdom.attr("name")=="1"){
-                kingdom.css("display","");
-            }
-            else{
-                kingdom.css("display","none");
-            }
-        })
-        $('.replyanscomment').on("click",function () {
-            $(this).append("<div class=\"input-group\" style=\"margin-top: 10px;\">\n" +
-                "                            <input type=\"text\" class=\"form-control\">\n" +
-                "                            <span class=\"input-group-addon\" style=\"background-color: #6db0ff;color:white;width: 50px\">发表</span>\n" +
-                "                        </div>")
-        })
+        
+        
     })
 
 </script>
