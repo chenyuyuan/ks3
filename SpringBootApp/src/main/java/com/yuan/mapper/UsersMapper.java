@@ -6,12 +6,18 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+
 @Repository
 public interface UsersMapper {
 
     //查询用户信息，通过用户名
     @Select("SELECT password FROM user WHERE account = #{account}")
     String findUserByAccount(@Param("account") String account);
+
+    //获取所有用户
+    @Select("SELECT * FROM user")
+    ArrayList<User> getAllUser();
 
     //查询用户信息，通过userid
     @Select("SELECT * FROM user WHERE id = #{id}")

@@ -24,6 +24,11 @@ public interface HomeMapper {
     @Select("SELECT * FROM community")
     ArrayList<Community> getAllCommunity();
 
+    @Select("SELECT comment.id, comment.user_id, account, name AS community_name, content, comment.up, comment.down, comment.post_date,head AS essay_head\n" +
+            "FROM comment, user, community, essay \n" +
+            "WHERE comment.user_id = user.id AND comment.essay_id = essay.id AND essay.community_id = community.id")
+    ArrayList<CardComment> getAllComment();
+
     @Select("SELECT essay.id, head, user_id, community_id, up, down, post_date, essay_content.content, user.account, community.name AS community_name, (SELECT count(*) FROM comment WHERE comment.essay_id = essay.id) AS comment_count,\n" +
             "(SELECT count(*) FROM up_essay WHERE up_essay.user_id = 2 AND up_essay.essay_id = essay.id) AS i_up, \n" +
             "(SELECT count(*) FROM down_essay WHERE down_essay.user_id = 2 AND down_essay.essay_id = essay.id) AS i_down,\n" +

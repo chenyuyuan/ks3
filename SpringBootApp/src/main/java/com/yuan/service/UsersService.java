@@ -5,6 +5,8 @@ import com.yuan.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class UsersService {
     @Autowired
@@ -17,6 +19,7 @@ public class UsersService {
         return usersMapper.findUserById(id);
     }
 
+    public ArrayList<User> getAllUser() {return usersMapper.getAllUser();}
 
     public User toLogin(String account, String password){
         return usersMapper.filterByAccountAndPassword(account, password);

@@ -1,8 +1,8 @@
 package com.yuan.controller;
 
-import com.yuan.entity.CardApplyCommunity;
-import com.yuan.entity.CardEssay;
+import com.yuan.entity.*;
 import com.yuan.service.HomeService;
+import com.yuan.service.UsersService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +22,9 @@ public class HomeAdminController {
     private HomeService homeService;
 
     @GetMapping(value = "/homeadmin")
-    public String pageHome(Model model, HttpServletRequest request) {
+    public String pageHomeAdmin(Model model, HttpServletRequest request) {
         String name = "yuan";
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
-        ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
 
         HttpSession session = request.getSession();
         String account = (String)session.getAttribute("account");
@@ -34,7 +33,48 @@ public class HomeAdminController {
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
-        model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
         return "adminhome";
+    }
+    @GetMapping(value = "/homeadmin/user")
+    public String pageHomeAdminUser(Model model, HttpServletRequest request) {
+        String name = "yuan";
+        ArrayList<User> listUser = homeService.getAllUser();
+
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        System.out.println(session.getId());
+        System.out.println(name);
+
+        model.addAttribute("name", name);
+        model.addAttribute("cardUser", listUser);
+        return "adminhomeuser";
+    }
+    @GetMapping(value = "/homeadmin/community")
+    public String pageHomeAdminCommunity(Model model, HttpServletRequest request) {
+        String name = "yuan";
+        ArrayList<Community> listCommunity = homeService.getAllCommunity();
+
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        System.out.println(session.getId());
+        System.out.println(name);
+
+        model.addAttribute("name", name);
+        model.addAttribute("cardCommunity", listCommunity);
+        return "adminhomecommunity";
+    }
+    @GetMapping(value = "/homeadmin/comment")
+    public String pageHomeAdminComment(Model model, HttpServletRequest request) {
+        String name = "yuan";
+        ArrayList<CardComment> listComment = homeService.getAllComment();
+
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        System.out.println(session.getId());
+        System.out.println(name);
+
+        model.addAttribute("name", name);
+        model.addAttribute("cardComment", listComment);
+        return "adminhomecomment";
     }
 }
