@@ -175,30 +175,7 @@
         window.location.href="http://localhost:8080/essay/"+essayid
     }
     $(document).ready(function () {
-        //回答点赞
-        $(".card-essay").hover(function() {
-            $(this).css("border-color","#898989")
-        }, function() {
-            $(this).css("border-color","#CCCCCC")
-        })
-        
-        //显示申请话题进度
-        $('.probar').click(function () {
-            process=$(this).attr('name')
-            $(this).css('width',process+'0%')
-            if(process<=2){
-                $(this).addClass("progress-bar-danger ")
-            }
-            else if(process<=5){
-                $(this).addClass("progress-bar-warning")
-            }
-            else if(process<=7){
-                $(this).addClass("progress-bar-info")
-            }
-            else if(process<=10){
-                $(this).addClass("progress-bar-success")
-            }
-        })
+    
     })
 
 </script>

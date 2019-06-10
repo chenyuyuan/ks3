@@ -147,30 +147,7 @@
 <script type="text/javascript" charset="UTF-8">
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
     $(document).ready(function () {
-        
-        
-        //回答问题
-        $('#toanswer').click(function () {
-            if($('#answering').css('display')=='none'){
-                $('#answering').css('display','');
-            }
-        })
-        var data={
-            'questionid':'1'
-        }
-        $('#submitanswer').click(function () {
-            $.ajax({
-                type:'POST',
-                url:'http://127.0.0.1:3000/submit/answering',
-                contentType: 'application/json; charset=UTF-8',
-                data:JSON.stringify(data),
-                dataType:'json',
-                success:function (data) {
-                    alert("good")
-                    alert(data.msg)
-                }
-            })
-        })
+    
     })
 
 </script>
