@@ -77,19 +77,7 @@
 			</div>
 			<div class="col-md-7 column" style="padding:0;margin: 2px">
 				<div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
-					<span style="font-size: 13px;font-family: 'Helvetica Neue';" th:text="|u/${cardEssay.account}|" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'"></span>
-					<span class="text-muted" th:text="|posted at r/${cardEssay.community_name} in ${cardEssay.post_date}|" style="font-size: 13px"></span>
-					<div style="font-size: 18px;" th:text="|${cardEssay.head}|" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'"></div>
-					<div th:text="|${cardEssay.content}|"></div>
-					<div style="height:10px"></div>
-					<div>
-						<span class="text-info anslike" name="0_{{key.id}}" th:text="${cardEssay.i_up==0?'顶':'已顶'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
-						<span class="text-info anslike" name="0_{{key.id}}" th:text="${cardEssay.i_down==0?'踩':'已踩'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
-						<span id="comment{{key.id}}" th:text="|${cardEssay.comment_count}条评论|" class="text-muted comment" name="{{key.id}}" style="margin-left: 20px;"></span>
-						<span class="text-muted" style="margin-left: 20px;">分享</span>
-						<span class="text-muted answerstar" th:text="${cardEssay.i_star==0?'收藏':'已收藏'}" name="0_{{key.id}}" style="margin-left: 20px;"></span>
-						<span class="text-muted" style="margin-left: 20px;">•••</span>
-					</div>
+				
 				</div>
 				<br/>
 			</div>

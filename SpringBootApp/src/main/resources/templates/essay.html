@@ -54,6 +54,9 @@
 					<span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">搜索</span>
 				</div>
 			</li>
+			<li>
+				<a style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/post">发布</a>
+			</li>
 			<li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
 				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">消息</span>
 				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">我的</span>
@@ -73,87 +76,25 @@
 	
 	<div class="col-md-12 column" style="margin-top: 50px">
 		<div class="row clearfix">
-			<div class="col-md-2 column">
+			<div class="col-md-1 column">
 			</div>
-			<div class="col-md-5 column" style="padding:0;margin: 2px">
-				
-				<div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
-					<span id="toanswer" style="border: #f3f3f3 solid 0px;background-color: #ffffff;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;"></span>
-					<span onclick="window.location.href='http://127.0.0.1:3000/home'" class="" style="font-weight: bold;margin-left: 22px;color:#77839c;margin-right: 40px">按时间</span>
-					<span onclick="window.location.href='http://127.0.0.1:3000/home/like'" style="margin-left: 120px;border: #0084ff solid 0px;background-color: white;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;">赞最多</span>
-					<span onclick="window.location.href='http://127.0.0.1:3000/home/com'" class="pull-right" style="margin-left: 22px;color:#77839c;margin-right: 40px">评论最多</span>
-					<!--<span style="margin-left: 22px;color: #77839c">•••</span>-->
-				</div>
-				<div id='answering' style="display: none">
-					<div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
-						<img src="http://127.0.0.1:3000/static/userhead/1.jpg" style="width: 25px"/>
-						<span>chenyuyuan</span>
-					</div>
-					<div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
-						<textarea style="width: 100%;height: 100px;border: 0;" onclick="if($(this).val()=='写回答..'){$(this).val('')}">写回答..</textarea>
-					</div>
-					<div class="shadow-smaller" style="height:64px;background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
-						<button id="submitanswer" class="btn btn-info" style="position: relative;float: right">提交问题</button>
-					</div>
-				</div>
-				{%for key in answered%}
-				<div class="shadow-smaller" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:1px #fafafa;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px; ">
-					<span style="font-weight: bold;font-size: 20px" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'">{{key.queTitle}}</span>
-					<br/>
-					<img src="http://127.0.0.1:3000/static/userhead/{{key.uid}}.jpg" style="width: 25px" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">
-					<span style="font-size: 18px;font-family: 'Helvetica Neue';" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'">{{key.account}}</span>
-					<span class="text-muted">,{{key.shortIntro}}</span>
-					<p class="text-muted" style="font-size: 14px">{{key.like}}人赞同了该答案</p>
-					<p style="font-size: 15px;line-height: 24px">{{key.content}}</p>
-					<p class="text-muted" style="font-size: 14px">发布于{{key.time}}</p>
+			<div class="col-md-7 column" style="padding:0;margin: 2px">
+				<div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
+					<span style="font-size: 13px;font-family: 'Helvetica Neue';" th:text="|u/${cardEssay.account}|" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'"></span>
+					<span class="text-muted" th:text="|posted at r/${cardEssay.community_name} in ${cardEssay.post_date}|" style="font-size: 13px"></span>
+					<div style="font-size: 18px;" th:text="|${cardEssay.head}|" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'"></div>
+					<div th:text="|${cardEssay.content}|"></div>
+					<div style="height:10px"></div>
 					<div>
-						{% if key.ilike=="0" %}
-						<span class="text-info anslike" name="0_{{key.id}}" style="background-color:#99fffb;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;">▲{{key.like}}</span>
-						{% else %}
-						<span class="text-info anslike" name="1_{{key.id}}" style="background-color:#00b0e4;padding:6px 12px 6px 12px;border: #31708f 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;">▲{{key.like}}</span>
-						{% endif %}
-						<span id="comment{{key.id}}" class="text-muted comment" name="{{key.id}}" style="margin-left: 20px;">{{key.comCount}}条评论</span>
+						<span class="text-info anslike" name="0_{{key.id}}" th:text="${cardEssay.i_up==0?'顶':'已顶'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+						<span class="text-info anslike" name="0_{{key.id}}" th:text="${cardEssay.i_down==0?'踩':'已踩'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+						<span id="comment{{key.id}}" th:text="|${cardEssay.comment_count}条评论|" class="text-muted comment" name="{{key.id}}" style="margin-left: 20px;"></span>
 						<span class="text-muted" style="margin-left: 20px;">分享</span>
-						{%if key.istar=="0"%}
-						<span class="text-muted answerstar" name="0_{{key.id}}" style="margin-left: 20px;">收藏</span>
-						{% elif key.istar=="1" %}
-						<span class="text-muted answerstar" name="1_{{key.id}}" style="margin-left: 20px;">取消收藏</span>
-						{% endif %}
+						<span class="text-muted answerstar" th:text="${cardEssay.i_star==0?'收藏':'已收藏'}" name="0_{{key.id}}" style="margin-left: 20px;"></span>
 						<span class="text-muted" style="margin-left: 20px;">•••</span>
 					</div>
-					<hr id="line{{key.id}}" style="display:none;margin-top: 15px;margin-bottom: 15px"/>
-					<div id="thetopcomment" style="" name="0">
-						<div class="input-group" style="margin-top: 10px;">
-							<input type="text" class="form-control">
-							<span class="input-group-addon"  onclick='var content= $(this).prev().val();var ansid=$(this).parent().parent().prev().prev().find(".comment").attr("name");datas={"ansid":ansid,"content":content,"pid":-1};$.ajax({url:"http://127.0.0.1:3000/comment/answer/submit",type:"POST",data:JSON.stringify(datas),contentType:"application/json; charset=UTF-8",dataType:"json",success:function (data) {if(data.data["msg"]=="good"){alert("评论成功")}window.location.reload() },error:function(a,b,c) {console.log(a.status+"::"+a.readyState+"::"+b) }})' style="background-color: #6db0ff;color:white;width: 50px">发表</span>
-						</div>
-					</div>
 				</div>
-				{%endfor%}
 				<br/>
-				<ul class="pagination" style="margin-left: 30px;margin-right: 30px">
-					<li>
-						<a href="#">Prev</a>
-					</li>
-					<li>
-						<a href="#">1</a>
-					</li>
-					<li>
-						<a href="#">2</a>
-					</li>
-					<li>
-						<a href="#">3</a>
-					</li>
-					<li>
-						<a href="#">4</a>
-					</li>
-					<li>
-						<a href="#">5</a>
-					</li>
-					<li>
-						<a href="#">Next</a>
-					</li>
-				</ul>
 			</div>
 			<div class="col-md-3 column" style=";padding: 0;margin: 2px;margin-left: 12px">
 				<div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
@@ -186,7 +127,7 @@
 				</div>
 				{% endfor %}
 			</div>
-			<div class="col-md-2 column">
+			<div class="col-md-1 column">
 			</div>
 		</div>
 		<hr style="margin: 20px;">
