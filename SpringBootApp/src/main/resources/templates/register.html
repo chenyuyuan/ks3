@@ -112,10 +112,11 @@
                         data:JSON.stringify(data),
                         dataType:'json',
                         success:function (data) {
-                            if(data["msg"]=="registered"){
+                            if(data["msg"]=="success"){
+                                alert('已注册')
                                 window.location.href="http://localhost:8080/login"
                             }
-                            else if(data["msg"]=="accountexisting"){
+                            else if(data["msg"]=="failed(account)"){
                                 $("#tips").html("账号已存在")
                             }
                         },

@@ -60,26 +60,26 @@ public class ApiLoginController {
     @CrossOrigin
     @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
     @ResponseBody
-    public Result Register(HttpServletRequest request, HttpServletResponse response) {
-        String account = request.getParameter("account");
-        String password = request.getParameter("password");
+    public Result Register(@RequestBody JSONObject params, HttpServletRequest request, HttpServletResponse response) {
+        String account = params.getString("account");
+        String password = params.getString("password");
         String telephone = request.getParameter("telephone");
         Hashtable hashtable = new Hashtable();//存放要返回的数据
         System.out.print("account:" + account + ",password:" + password + ",telephone:" + telephone);
 
         if(account == null || password == null) {
-            String message = String.format("注册失败，详细信息[用户名或密码为空]。");
+            String message = String.format("failed(password)");
             return ResultFactory.buildFailResult(message);
         }
 
         String foundPwd=usersService.selectUserByAccountGetPasswprd(account);
         if (foundPwd != null || foundPwd == "") {
-            String message = String.format("注册失败，详细信息[用户名已存在]。");
+            String message = String.format("failed(account)");
             return ResultFactory.buildFailResult(message);
         }
         else {
-            usersService.toRegister(account, password, telephone);
-            String message = String.format("注册成功。");
+            usersService.toRegister(account, password);
+            String message = String.format("success");
             return ResultFactory.buildSuccessResult(message);
         }
     }

@@ -28,6 +28,6 @@ public interface UsersMapper {
     User filterByAccountAndPassword(@Param("account") String account, @Param("password") String password);
 
     //增加新用户
-    @Insert("INSERT INTO users (account,password,user_tel) VALUES (#{account},#{password},#{telephone})")
-    void insertUserInfoIntoUsers(@Param("account") String account,@Param("password") String password,@Param("telephone") String telephone);
+    @Insert("INSERT INTO user (account,password) VALUES (#{account},#{password})")
+    void insertUserInfoIntoUsers(@Param("account") String account,@Param("password") String password);
 }

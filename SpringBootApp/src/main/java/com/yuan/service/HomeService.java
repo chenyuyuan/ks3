@@ -23,7 +23,8 @@ public class HomeService {
     public ArrayList<Community> getAllCommunity() {return homeMapper.getAllCommunity();}
     public ArrayList<CardComment> getAllComment() {return homeMapper.getAllComment();}
 
-
     public ArrayList<CardEssay> getAllCardEssay() {return homeMapper.getAllCardEssay();}
     public ArrayList<CardApplyCommunity> getAllCardApplyCommunity() {return homeMapper.getAllCardApplyCommunity();}
+
+
 }

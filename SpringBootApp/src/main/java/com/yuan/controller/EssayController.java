@@ -26,13 +26,11 @@ public class EssayController {
         HttpSession session = request.getSession();
 
         String account = (String)session.getAttribute("account");
-
         System.out.println(essayid);
         System.out.println(session.getId());
         System.out.println(account);
 
         CardEssay cardEssay = essayService.getCardEssay(essayid);
-
 
         model.addAttribute("account", account);
         model.addAttribute("cardEssay", cardEssay);

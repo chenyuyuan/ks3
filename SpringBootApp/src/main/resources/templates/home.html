@@ -104,16 +104,16 @@
                         <button id="submitanswer" class="btn btn-info" style="position: relative;float: right">提交问题</button>
                     </div>
                 </div>
-                <div th:each="key:${cardEssay}" th:onclick="'javascript:toEssay(\''+${key.id}+'\')'" class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
+                <div th:each="key:${cardEssay}" class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
                     <span style="font-size: 13px;font-family: 'Helvetica Neue';" th:text="|u/${key.account}|" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'"></span>
                     <span class="text-muted" th:text="|posted at r/${key.community_name} in ${key.post_date}|" style="font-size: 13px"></span>
                     <div style="font-size: 18px;" th:text="|${key.head}|" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'"></div>
-                    <div th:text="|${key.content}|"></div>
+                    <div th:onclick="'javascript:toEssay(\''+${key.id}+'\')'" th:text="|${key.content}|"></div>
                     <div style="height:10px"></div>
                     <div>
-                        <span class="text-info anslike" th:text="${key.up}+${key.i_up==0?'顶':'已顶'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+                        <span th:onclick="'javascript:toUp(\''+${key.id}+'\')'" class="text-info anslike" th:text="${key.up}+${key.i_up==0?'顶':'已顶'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
                         <span class="text-info anslike" th:text="${key.down}+${key.i_down==0?'踩':'已踩'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
-                        <span th:text="|${key.comment_count}条评论|" class="text-muted comment" style="margin-left: 20px;"></span>
+                        <span th:onclick="'javascript:toEssay(\''+${key.id}+'\')'" th:text="|${key.comment_count}条评论|" class="text-muted comment" style="margin-left: 20px;"></span>
                         <span class="text-muted" style="margin-left: 20px;">分享</span>
                         <span class="text-muted answerstar" th:text="${key.i_star==0?'收藏':'已收藏'}" name="0_{{key.id}}" style="margin-left: 20px;"></span>
                         <span class="text-muted" style="margin-left: 20px;">•••</span>
@@ -128,7 +128,7 @@
             </div>
             <div class="col-md-3 column" style="padding: 0;margin: 2px;margin-left: 12px">
                 <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
-                    <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'">申请中的话题</span>
+                    <span style="color: #444444;font-size: 25px;font-family: 'Microsoft JhengHei'"></span>
                     <span class="pull-right" style="margin-top: 12px" onclick="if($('.applytopic').css('display')=='none'){$('.applytopic').css('display','')}else{$('.applytopic').css('display','none')}"  >申请话题</span>
                     <div style="clear: both"></div>
                 </div>
@@ -170,9 +170,31 @@
 </div>
 <script type="text/javascript" charset="UTF-8">
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
-    
-    function toEssay(essayid){
+    //点击文章内容跳转
+    function toEssay(essayid) {
         window.location.href="http://localhost:8080/essay/"+essayid
+    }
+    function toUp(essayid) {
+        alert(essayid)
+        data=JSON.stringify({ "essay_id":essayid })
+        $.post({
+            url:'http://localhost:8080/api/home/up',
+            contentType: 'application/json; charset=UTF-8',
+            data:data,
+            dataType:'json',
+            success:function (data) {
+                console.log(data)
+                if(data["data"]["msg"]=="success"){
+                    //pass
+                }
+                else if(data["data"]["message"]=="wrongpassword"){
+                    //pass
+                }
+            },
+            error:function(a,b,c) {
+                console.log(a.status+"::"+a.readyState+"::"+b)
+            }
+        })
     }
     $(document).ready(function () {
         $(".card-essay").hover(function() {
