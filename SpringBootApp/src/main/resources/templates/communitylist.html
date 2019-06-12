@@ -84,28 +84,24 @@
             <div class="col-md-2 column">
             </div>
             <div class="col-md-5 column" style="padding:0;margin: 2px">
-                
                 <div class="shadow-smaller" style="margin-top: 0;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
-                    <span id="toanswer" style="border: #f3f3f3 solid 0px;background-color: #ffffff;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;"></span>
-                    <span onclick="window.location.href='http://127.0.0.1:8080/home'" class="" style="font-weight: bold;margin-left: 22px;color:#77839c;margin-right: 40px">按时间</span>
-                    <span onclick="window.location.href='http://127.0.0.1:8080/home/like'" style="margin-left: 120px;border: #0084ff solid 0px;background-color: white;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;">赞最多</span>
-                    <span onclick="window.location.href='http://127.0.0.1:8080/home/hot'" class="pull-right" style="margin-left: 22px;color:#77839c;margin-right: 40px">最热</span>
-                    <!--<span style="margin-left: 22px;color: #77839c">•••</span>-->
+                    <span onclick="window.location.href='#'" style="margin-left: 5px;border: #0084ff solid 0px;background-color: white;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;">我关注的社区</span>
                 </div>
-                <div th:each="key:${cardEssay}" class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
-                    <span style="font-size: 13px;font-family: 'Helvetica Neue';" th:text="|u/${key.account}|" name="{{key.uid}}" onclick="window.location.href='http://127.0.0.1:3000/people/'+$(this).attr('name')+'/ask'"></span>
-                    <span class="text-muted" th:text="|posted at r/${key.community_name} in ${key.post_date}|" style="font-size: 13px"></span>
-                    <div style="font-size: 18px;" th:text="|${key.head}|" name="{{key.qid}}" onclick="window.location.href='http://127.0.0.1:3000/question/'+$(this).attr('name')+'/hotanswer'"></div>
-                    <div th:onclick="'javascript:toEssay(\''+${key.id}+'\')'" th:text="|${key.content}|"></div>
-                    <div style="height:10px"></div>
-                    <div>
-                        <span th:onclick="'javascript:toUp(\''+${key.id}+'\')'" class="text-info anslike" th:text="${key.up}+${key.i_up==0?'顶':'已顶'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
-                        <span class="text-info anslike" th:text="${key.down}+${key.i_down==0?'踩':'已踩'}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
-                        <span th:onclick="'javascript:toEssay(\''+${key.id}+'\')'" th:text="|${key.comment_count}条评论|" class="text-muted comment" style="margin-left: 20px;"></span>
-                        <span class="text-muted" style="margin-left: 20px;">分享</span>
-                        <span class="text-muted answerstar" th:text="${key.i_star==0?'收藏':'已收藏'}" name="0_{{key.id}}" style="margin-left: 20px;"></span>
-                        <span class="text-muted" style="margin-left: 20px;">•••</span>
-                    </div>
+                <div th:each="key:${cardStarCommunity}" class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
+                    <span style="font-size: 13px;font-family: 'Helvetica Neue';" th:text="|r/${key.name}|"></span>
+                    <span class="text-muted" th:text="|founded in ${key.public_date}|" style="font-size: 13px"></span>
+                    <span class="text-muted" th:text="|having ${key.members} members|" style="font-size: 13px"></span>
+                    <span class="text-muted pull-right" style="color: #0d83ff;font-size: 13px">管理</span>
+                </div>
+                <hr style="margin-left: 20px" />
+                <div class="shadow-smaller" style="margin-top: 20px;border: #fafafa solid 0px;background-color: white;margin-left: 10px;;margin-bottom: 10px;margin-right:-10px;padding:15px;">
+                    <span onclick="window.location.href='#'" style="margin-left: 5px;border: #0084ff solid 0px;background-color: white;padding:8px 18px 8px 18px;border-top-right-radius:5px; border-top-left-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;color:#0084ff ;">全部社区</span>
+                </div>
+                <div th:each="key:${cardCommunity}" class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
+                    <span style="font-size: 13px;font-family: 'Helvetica Neue';" th:text="|r/${key.name}|"></span>
+                    <span class="text-muted" th:text="|founded in ${key.public_date}|" style="font-size: 13px"></span>
+                    <span class="text-muted" th:text="|having ${key.members} members|" style="font-size: 13px"></span>
+                    <span class="text-muted pull-right" style="color: #0d83ff;font-size: 13px">管理</span>
                 </div>
                 <br/>
                 <ul class="pagination" style="margin-left: 30px;margin-right: 30px">
