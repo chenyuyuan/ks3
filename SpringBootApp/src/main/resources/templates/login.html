@@ -93,18 +93,22 @@
             }
             else{
                 data=JSON.stringify({
-                    "account":"root",
-                    "password":"1899"
+                    "account":account,
+                    "password":password
                 })
-                $.post({
+                $.ajax({
+                    type:'POST',
                     url:'http://localhost:8080/api/login',
                     contentType: 'application/json; charset=UTF-8',
                     data:data,
                     dataType:'json',
+                    xhrFields: {
+                        withCredentials: true
+                    },
                     success:function (data) {
                         console.log(data)
                         if(data["data"]["msg"]=="login successfully"){
-                            window.location.href="http://127.0.0.1:8080/home"
+                            window.location.href="http://localhost:8080/home"
                         }
                         else if(data["data"]["message"]=="wrongpassword"){
                             $("#tips").html("密码错误")

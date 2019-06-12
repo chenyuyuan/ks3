@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,18 +24,28 @@ public class HomeController {
     private HomeService homeService;
 
     @GetMapping(value = "/home")
-    public String pageHome(Model model, HttpServletRequest request) {
+    public String pageHome(Model model, HttpServletRequest request, HttpServletResponse response) {
+        response.setHeader("Access-Control-Allow-Headers", "X-Requested-With, accept, content-type, xxxx, application/json");
+        response.setHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH");
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+        response.setHeader("Access-Control-Allow-Credentials", String.valueOf(true));
+
+
+
         String name = "yuan";
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
+        ArrayList<Community> listCardCommunity = homeService.getAllCommunity();
+
 
         HttpSession session = request.getSession();
         String account = (String)session.getAttribute("account");
-        System.out.println(session.getId());
-        System.out.println(name);
+        System.out.println("Home: "+session.getId());
+        System.out.println(account);
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
+        model.addAttribute("cardCommunity", listCardCommunity);
         model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
         return "home";
     }

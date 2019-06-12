@@ -39,32 +39,32 @@
 	<div class="row clearfix">
 		<ul class="nav nav-pills shadow" style="height:50px;background-color: #ffffff;margin-right: 0px;margin-left: 0px">
 			<li class="active">
-				<a href="http://127.0.0.1:8080/home" style="padding: 0 12px 0 12px;font-size: 28px">R</a>
+				<a href="http://localhost:8080/home" style="padding: 0 12px 0 12px;font-size: 28px">R</a>
 			</li>
 			<li>
-				<a style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/home">首页</a>
+				<a style="font-size:16px; margin-top:2px" href="http://localhost:8080/home">首页</a>
 			</li>
 			
 			<li>
-				<a class="text-muted" style="font-size:16px; margin-top:2px" href="http://127.0.0.1:8080/topicSquare">话题</a>
+				<a class="text-muted" style="font-size:16px; margin-top:2px" href="http://localhost:8080/topicSquare">话题</a>
 			</li>
 			<li style="margin-left: 60px;margin-top: 8px">
 				<div class="input-group" style="width:342px">
-					<input type="text"  onclick="window.location.href='http://127.0.0.1:3000/search'" class="form-control">
+					<input type="text"  onclick="window.location.href='#'" class="form-control">
 					<span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='#'">搜索</span>
 				</div>
 			</li>
 			<li class="dropdown pull-right" style="margin-top: 10px;margin-right: 8px">
-				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://127.0.0.1:8080/people/'+$(this).attr('name')+'/msg'">消息</span>
+				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='http://localhost:8080/people/'+$(this).attr('name')+'/msg'">消息</span>
 				<span class="text-muted" name="{{myid}}" style="font-size:16px;margin-right:18px;" onclick="window.location.href='#'">我的</span>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="http://127.0.0.1:8080/people/me/myask">个人主页</a>
+						<a href="http://localhost:8080/people/me/myask">个人主页</a>
 					</li>
 					<li class="divider">
 					</li>
 					<li>
-						<a href="http://127.0.0.1:3000/logout">退出登录</a>
+						<a href="http://localhost:3000/logout">退出登录</a>
 					</li>
 				</ul>
 			</li>
@@ -128,7 +128,7 @@
                 "community_id":thisCommunityId
             }
             $.ajax({
-                url:"http://127.0.0.1:8080/api/post",
+                url:"http://localhost:8080/api/post",
                 type:"POST",
                 dataType:"json",
                 data:JSON.stringify(data),

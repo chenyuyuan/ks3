@@ -26,7 +26,7 @@ public class PostController {
 
         HttpSession session = request.getSession();
         String account = (String)session.getAttribute("account");
-        System.out.println(session.getId());
+        System.out.println("Post:"+session.getId());
         System.out.println(account);
 
         model.addAttribute("account", account);

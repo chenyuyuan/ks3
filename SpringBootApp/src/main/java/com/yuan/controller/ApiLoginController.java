@@ -27,6 +27,11 @@ public class ApiLoginController {
     @ResponseBody
     public Result Login(@RequestBody JSONObject params, HttpServletRequest request, HttpServletResponse response) {
 
+        response.setHeader("Access-Control-Allow-Headers", "X-Requested-With, accept, content-type, xxxx, application/json");
+        response.setHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH");
+        response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+        response.setHeader("Access-Control-Allow-Credentials", String.valueOf(true));
+
         //Integer id = params.getInteger("userId");
         String account = params.getString("account");
         String password = params.getString("password");
