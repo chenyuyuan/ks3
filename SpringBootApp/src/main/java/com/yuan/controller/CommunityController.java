@@ -25,6 +25,7 @@ public class CommunityController {
 
     @GetMapping(value = "/community/{community_id}")
     public String pageHomeAdminCommunity(Model model, HttpServletRequest request,@PathVariable int community_id) {
+        System.out.print("Community:");
         String name = "yuan";
         ArrayList<Community> listCommunity = homeService.getAllCommunity();
         ArrayList<CardEssay> listCardEssay = communityService.getCommunityCardEssay(community_id);

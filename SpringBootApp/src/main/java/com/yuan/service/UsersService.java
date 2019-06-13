@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class UsersService {
     @Autowired
     private UsersMapper usersMapper;
-    public String selectUserByAccountGetPasswprd(String account) {
+    public User selectUserByAccount(String account) {
         return usersMapper.findUserByAccount(account);
     }
 

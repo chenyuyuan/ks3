@@ -1,6 +1,8 @@
 package com.yuan.mapper;
 
 import com.yuan.entity.*;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -30,13 +32,13 @@ public interface HomeMapper {
     ArrayList<CardComment> getAllComment();
 
     @Select("SELECT essay.id, head, user_id, community_id, up, down, post_date, essay_content.content, user.account, community.name AS community_name, (SELECT count(*) FROM comment WHERE comment.essay_id = essay.id) AS comment_count,\n" +
-            "(SELECT count(*) FROM up_essay WHERE up_essay.user_id = 2 AND up_essay.essay_id = essay.id) AS i_up, \n" +
-            "(SELECT count(*) FROM down_essay WHERE down_essay.user_id = 2 AND down_essay.essay_id = essay.id) AS i_down,\n" +
-            "(SELECT count(*) FROM star_essay WHERE star_essay.user_id = 2 AND star_essay.essay_id = essay.id) AS i_star\n" +
+            "(SELECT count(*) FROM up_essay WHERE up_essay.user_id = #{user_id} AND up_essay.essay_id = essay.id) AS i_up, \n" +
+            "(SELECT count(*) FROM down_essay WHERE down_essay.user_id = #{user_id} AND down_essay.essay_id = essay.id) AS i_down,\n" +
+            "(SELECT count(*) FROM star_essay WHERE star_essay.user_id = #{user_id} AND star_essay.essay_id = essay.id) AS i_star\n" +
             "FROM essay, essay_content, community, user\n" +
             "WHERE essay.user_id=user.id AND essay.community_id = community.id AND essay.id = essay_content.essay_id\n" +
             "ORDER BY post_date DESC")
-    ArrayList<CardEssay> getAllCardEssay();
+    ArrayList<CardEssay> getAllCardEssay(@Param("user_id") int user_id);
 
     @Select("SELECT apply_community.id, name, user_id AS apply_user_id, support_number,introduction,\n" +
             "(SELECT account FROM user WHERE id = user_id) AS apply_user_account,\n" +
@@ -45,4 +47,19 @@ public interface HomeMapper {
             ") AS i_support_community\n" +
             "FROM apply_community,apply_community_support_user")
     ArrayList<CardApplyCommunity> getAllCardApplyCommunity();
+
+
+    @Select("SELECT * FROM up_essay WHERE user_id = #{user_id} AND essay_id = #{essay_id}")
+    UpEssay getUpEssay(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
+    @Delete("Delete FROM up_essay WHERE user_id = #{user_id} AND essay_id = #{essay_id}")
+    void delUpEssay(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
+    @Insert("INSERT INTO up_essay (user_id,essay_id) VALUES (#{user_id},#{essay_id})")
+    void insUpEssay(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
+
+    @Select("SELECT * FROM down_essay WHERE user_id = #{user_id} AND essay_id = #{essay_id}")
+    UpEssay getDownEssay(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
+    @Delete("Delete FROM down_essay WHERE user_id = #{user_id} AND essay_id = #{essay_id}")
+    void delDownEssay(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
+    @Insert("INSERT INTO down_essay (user_id,essay_id) VALUES (#{user_id},#{essay_id})")
+    void insDownEssay(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
 }

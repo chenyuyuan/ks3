@@ -24,13 +24,13 @@ public class HomeAdminController {
     @GetMapping(value = "/homeadmin")
     public String pageHomeAdmin(Model model, HttpServletRequest request) {
         String name = "yuan";
-        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
-
         HttpSession session = request.getSession();
         String account = (String)session.getAttribute("account");
-        System.out.println(session.getId());
-        System.out.println(name);
+        int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
+        System.out.println("Home: "+session.getId());
+        System.out.println(account);
 
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
         return "adminhome";

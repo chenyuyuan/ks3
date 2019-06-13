@@ -23,8 +23,25 @@ public class HomeService {
     public ArrayList<Community> getAllCommunity() {return homeMapper.getAllCommunity();}
     public ArrayList<CardComment> getAllComment() {return homeMapper.getAllComment();}
 
-    public ArrayList<CardEssay> getAllCardEssay() {return homeMapper.getAllCardEssay();}
+    public ArrayList<CardEssay> getAllCardEssay(int user_id) {return homeMapper.getAllCardEssay(user_id);}
     public ArrayList<CardApplyCommunity> getAllCardApplyCommunity() {return homeMapper.getAllCardApplyCommunity();}
 
+
+    public void UpUp(int user_id, int essay_id) {
+        if(homeMapper.getUpEssay(user_id,essay_id)==null) {
+            homeMapper.insUpEssay(user_id,essay_id);
+        }
+        else {
+            homeMapper.delUpEssay(user_id,essay_id);
+        }
+    }
+    public void DownDown(int user_id, int essay_id) {
+        if(homeMapper.getDownEssay(user_id,essay_id)==null) {
+            homeMapper.insDownEssay(user_id,essay_id);
+        }
+        else {
+            homeMapper.delDownEssay(user_id,essay_id);
+        }
+    }
 
 }

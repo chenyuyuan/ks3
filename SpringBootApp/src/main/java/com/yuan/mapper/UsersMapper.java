@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public interface UsersMapper {
 
     //查询用户信息，通过用户名
-    @Select("SELECT password FROM user WHERE account = #{account}")
-    String findUserByAccount(@Param("account") String account);
+    @Select("SELECT * FROM user WHERE account = #{account}")
+    User findUserByAccount(@Param("account") String account);
 
     //获取所有用户
     @Select("SELECT * FROM user")

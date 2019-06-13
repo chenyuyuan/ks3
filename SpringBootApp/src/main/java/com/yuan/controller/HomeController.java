@@ -30,18 +30,17 @@ public class HomeController {
         response.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
         response.setHeader("Access-Control-Allow-Credentials", String.valueOf(true));
 
-
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
+        System.out.println("Home: "+session.getId());
+        System.out.println(account);
 
         String name = "yuan";
-        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
         ArrayList<Community> listCardCommunity = homeService.getAllCommunity();
 
-
-        HttpSession session = request.getSession();
-        String account = (String)session.getAttribute("account");
-        System.out.println("Home: "+session.getId());
-        System.out.println(account);
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
@@ -53,7 +52,13 @@ public class HomeController {
     @GetMapping(value = "/home/like")
     public String pageHomeLike(Model model, HttpServletRequest request) {
         String name = "yuan";
-        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
+        System.out.println("Home: "+session.getId());
+        System.out.println(account);
+
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
 
         Collections.sort(listCardEssay, new Comparator<CardEssay>() {
@@ -67,10 +72,6 @@ public class HomeController {
                 }
             }
         });
-        HttpSession session = request.getSession();
-        String account = (String)session.getAttribute("account");
-        System.out.println(session.getId());
-        System.out.println(name);
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
@@ -80,7 +81,13 @@ public class HomeController {
     @GetMapping(value = "/home/hot")
     public String pageHomeHot(Model model, HttpServletRequest request) {
         String name = "yuan";
-        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay();
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
+        System.out.println("Home: "+session.getId());
+        System.out.println(account);
+
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
 
         Collections.sort(listCardEssay, new Comparator<CardEssay>() {
@@ -104,10 +111,6 @@ public class HomeController {
                 return 1;
             }
         });
-        HttpSession session = request.getSession();
-        String account = (String)session.getAttribute("account");
-        System.out.println(session.getId());
-        System.out.println(name);
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);

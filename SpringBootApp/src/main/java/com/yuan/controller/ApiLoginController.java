@@ -2,6 +2,7 @@ package com.yuan.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.yuan.entity.User;
 import com.yuan.result.Result;
 import com.yuan.result.ResultFactory;
 import com.yuan.service.UsersService;
@@ -46,13 +47,13 @@ public class ApiLoginController {
             String message = String.format("wronginput");
             return ResultFactory.buildFailResult(message);
         }
-        String getpass = usersService.selectUserByAccountGetPasswprd(account);
-        if (!Objects.equals(getpass, password)) {
+        User user = usersService.selectUserByAccount(account);
+        if (!Objects.equals(user.getPassword(), password)) {
             String message = String.format("loginerror");
             return ResultFactory.buildFailResult(message);
         }
         session.setAttribute("account",account);
-        session.setAttribute("user_id",getpass);
+        session.setAttribute("user_id",user.getId());
         if (session.isNew()) {
             System.out.println("session创建成功，session的id是："+session.getId());
         }else {
@@ -77,8 +78,8 @@ public class ApiLoginController {
             return ResultFactory.buildFailResult(message);
         }
 
-        String foundPwd=usersService.selectUserByAccountGetPasswprd(account);
-        if (foundPwd != null || foundPwd == "") {
+        User user=usersService.selectUserByAccount(account);
+        if (user.getAccount() != null || user.getAccount() == "") {
             String message = String.format("failed(account)");
             return ResultFactory.buildFailResult(message);
         }
