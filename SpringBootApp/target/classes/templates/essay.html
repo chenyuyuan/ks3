@@ -119,7 +119,11 @@
 <script type="text/javascript" charset="UTF-8">
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
     $(document).ready(function () {
-    
+        $(".card-essay").hover(function() {
+            $(this).css("border-color","#898989")
+        }, function() {
+            $(this).css("border-color","#CCCCCC")
+        })
     })
 
 </script>

@@ -24,7 +24,26 @@ public class CommunityController {
     private CommunityService communityService;
 
     @GetMapping(value = "/community/{community_id}")
-    public String pageHomeAdminCommunity(Model model, HttpServletRequest request,@PathVariable int community_id) {
+    public String pageCommunity(Model model, HttpServletRequest request,@PathVariable int community_id) {
+        System.out.print("Community:");
+        String name = "yuan";
+        ArrayList<Community> listCommunity = homeService.getAllCommunity();
+        ArrayList<CardEssay> listCardEssay = communityService.getCommunityCardEssay(community_id);
+
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        System.out.println(session.getId());
+        System.out.println(name);
+
+        model.addAttribute("name", name);
+        model.addAttribute("community_id", community_id);
+        model.addAttribute("cardCommunity", listCommunity);
+        model.addAttribute("cardEssay", listCardEssay);
+        return "community";
+    }
+
+    @GetMapping(value = "/communityadminaudit/{community_id}")
+    public String pageCommunityAdminAudit(Model model, HttpServletRequest request,@PathVariable int community_id) {
         System.out.print("Community:");
         String name = "yuan";
         ArrayList<Community> listCommunity = homeService.getAllCommunity();
@@ -38,7 +57,7 @@ public class CommunityController {
         model.addAttribute("name", name);
         model.addAttribute("cardCommunity", listCommunity);
         model.addAttribute("cardEssay", listCardEssay);
-        return "community";
+        return "communityadminaudit";
     }
 
 }
