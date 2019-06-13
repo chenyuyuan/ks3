@@ -29,7 +29,9 @@ public class EssayController {
         System.out.println(essayid);
         System.out.println(session.getId());
         System.out.println(account);
+        int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
 
+        essayService.insViewLogs(user_id,essayid);
         CardEssay cardEssay = essayService.getCardEssay(essayid);
 
         model.addAttribute("account", account);

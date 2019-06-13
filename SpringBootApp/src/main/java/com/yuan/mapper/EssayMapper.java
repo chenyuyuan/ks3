@@ -2,6 +2,7 @@ package com.yuan.mapper;
 
 import com.yuan.entity.CardEssay;
 import com.yuan.entity.Community;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,8 @@ public interface EssayMapper {
             "WHERE essay.user_id=user.id AND essay.community_id = community.id AND essay.id = essay_content.essay_id AND essay_id = #{essay_id}\n" +
             "ORDER BY post_date DESC")
     CardEssay getCardEssay(@Param("essay_id") int essay_id);
+
+
+    @Insert("INSERT INTO view_logs (user_id,essay_id) VALUES (#{user_id},#{essay_id})")
+    void insViewLogs(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
 }

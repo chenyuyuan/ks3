@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/redis")
-public class ApiTestController {
+public class ApiRedisController {
 
     @Autowired
     StringRedisTemplate redisTemplate;

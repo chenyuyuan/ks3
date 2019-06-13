@@ -21,13 +21,13 @@ public class PostController {
     private PostService postService;
     @GetMapping(value = "/post")
     public String pageLogin(Model model, HttpServletRequest request) {
-        ArrayList<CardFollowCommunity> listCardFollowCommunity = postService.getAllFollowCommunity();
-
-
         HttpSession session = request.getSession();
         String account = (String)session.getAttribute("account");
         System.out.println("Post:"+session.getId());
+        int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
         System.out.println(account);
+
+        ArrayList<CardFollowCommunity> listCardFollowCommunity = postService.getAllFollowCommunity();
 
         model.addAttribute("account", account);
         model.addAttribute("CardFollowCommunity", listCardFollowCommunity);

@@ -17,4 +17,8 @@ public class EssayService {
         return essayMapper.getCardEssay(essay_id);
     }
 
+    public void insViewLogs(int user_id, int essay_id) {
+        essayMapper.insViewLogs(user_id,essay_id);
+    }
+
 }
