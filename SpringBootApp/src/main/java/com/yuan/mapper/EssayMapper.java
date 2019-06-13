@@ -1,5 +1,6 @@
 package com.yuan.mapper;
 
+import com.yuan.entity.CardComment2;
 import com.yuan.entity.CardEssay;
 import com.yuan.entity.Community;
 import org.apache.ibatis.annotations.Insert;
@@ -23,4 +24,13 @@ public interface EssayMapper {
 
     @Insert("INSERT INTO view_logs (user_id,essay_id) VALUES (#{user_id},#{essay_id})")
     void insViewLogs(@Param("user_id") int user_id,@Param("essay_id") int essay_id);
+
+    @Select("SELECT comment.id, user.id AS user_id, account, content, post_date\n" +
+            "FROM comment, user\n" +
+            "WHERE user_id = user.id AND essay_id = #{essay_id}\n" +
+            "ORDER BY post_date DESC")
+    ArrayList<CardComment2> getCardComment(@Param("essay_id") int essay_id);
+
+    @Insert("INSERT INTO comment (user_id,essay_id,father_comment_id,content) VALUES (#{user_id},#{essay_id},0,#{content})")
+    void insComment(@Param("user_id") int user_id,@Param("essay_id") int essay_id,@Param("content") String content);
 }

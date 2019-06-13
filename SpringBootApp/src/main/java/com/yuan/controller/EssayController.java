@@ -1,5 +1,6 @@
 package com.yuan.controller;
 
+import com.yuan.entity.CardComment2;
 import com.yuan.entity.CardEssay;
 import com.yuan.service.EssayService;
 import org.slf4j.Logger;
@@ -33,9 +34,11 @@ public class EssayController {
 
         essayService.insViewLogs(user_id,essayid);
         CardEssay cardEssay = essayService.getCardEssay(essayid);
+        ArrayList<CardComment2> cardComment2 = essayService.getCardComment(essayid);
 
         model.addAttribute("account", account);
         model.addAttribute("cardEssay", cardEssay);
+        model.addAttribute("cardComment", cardComment2);
         return "essay";
     }
 }
