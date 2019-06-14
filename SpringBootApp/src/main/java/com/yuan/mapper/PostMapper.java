@@ -1,6 +1,7 @@
 package com.yuan.mapper;
 
 import com.yuan.entity.CardFollowCommunity;
+import com.yuan.entity.Tag;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -26,5 +27,9 @@ public interface PostMapper {
     @Insert("INSERT INTO essay_content (essay_id,content) VALUES (#{essay_id},#{content})")
     void postEssayContent(@Param("essay_id") int essay_id,@Param("content") String content);
 
+    @Select("SELECT * FROM tag_list")
+    ArrayList<Tag> getAllCardTag();
 
+    @Insert("INSERT INTO essay_tag (essay_id,tag_id) VALUES (#{essay_id},#{tag_id})")
+    void insEssayTag(@Param("essay_id") int essay_id,@Param("tag_id") int tag_id);
 }

@@ -12,6 +12,7 @@ public class CardEssay implements Serializable {
     private int up;
     private int down;
     private String post_date;
+    private int state;
 
     private String content;
 
@@ -148,5 +149,13 @@ public class CardEssay implements Serializable {
         if(x>0)y=1;else if(x<0)y=-1;else y=0;
         ans = Math.log10(z) + ((double)y*(double)t)/4500;
         return ans;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }

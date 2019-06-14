@@ -76,9 +76,9 @@
 				<div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
 					<input id="post_head" type="text" style="margin-top:16px;width:400px" class="form-control" placeholder="标题">
 					<textarea id="post_content" type="" style="height:200px;margin-top:16px" class="form-control" placeholder="内容"></textarea>
-					<div style="height: 75px;">
-						<div style="margin-left:10px;margin-top:16px;float: left;" th:each="key:${CardFollowCommunity}">
-							<span th:onclick="'javascript:setCommunityId(\''+${key.community_id}+'\')'" class="text-info anslike" name="0_{{key.id}}" th:text="${key.community_name}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #51c5f7 1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
+					<div style="height: 100px;">
+						<div style="margin-left:10px;margin-top:16px;float: left;" th:each="key:${CardTag}">
+							<span th:onclick="'javascript:setTagId(\''+${key.id}+'\')'" class="text-info anslike" th:text="${key.tag_name}" style="background-color:#f3f3f3;padding:6px 12px 6px 12px;border: #f3f3f3 1px solid;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;"></span>
 						</div>
 					</div>
 					<button id="post_button" type="submit" class="btn btn-primary center-block" style="width:300px;height: 40px;margin-top: 20px">提交</button>
@@ -109,10 +109,26 @@
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
     
     var thisCommunityId=0;
+    var thisTagId1=0;
+    var thisTagId2=0;
+    var thisTagId3=0;
     
-    function setCommunityId(community_id) {
-        thisCommunityId=community_id
-	    alert(thisCommunityId)
+    function setTagId(tag_id) {
+        if(tag_id==thisTagId1 ||tag_id == thisTagId2||tag_id==thisTagId3){
+            console.log("id已存在")
+        }
+        else {
+            if(thisTagId1 == 0){
+                thisTagId1=tag_id
+            }
+            else if(thisTagId2 == 0){
+                thisTagId2=tag_id
+            }
+            else if(thisTagId3 == 0){
+                thisTagId3=tag_id
+            }
+        }
+        alert(thisTagId1+" "+thisTagId2+" "+thisTagId3)
     }
     
     $(document).ready(function () {
@@ -122,7 +138,10 @@
             data={
                 "head":$("#post_head").val(),
                 "content":$("#post_content").val(),
-                "community_id":thisCommunityId
+                "community_id":1,
+	            "tag_id1":thisTagId1,
+	            "tag_id2":thisTagId2,
+	            "tag_id3":thisTagId3
             }
             $.ajax({
                 url:"http://localhost:8080/api/post",

@@ -78,6 +78,37 @@ public class HomeController {
         model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
         return "home";
     }
+
+    @GetMapping(value = "/home/advice")
+    public String pageHomeAdvice(Model model, HttpServletRequest request) {
+        String name = "yuan";
+        HttpSession session = request.getSession();
+        String account = (String)session.getAttribute("account");
+        int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
+        System.out.println("Home: "+session.getId());
+        System.out.println(account);
+
+        ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
+        ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
+
+        Collections.sort(listCardEssay, new Comparator<CardEssay>() {
+            @Override
+            public int compare(CardEssay o1, CardEssay o2) {
+                if(o1.getUp() <= o2.getUp()) {
+                    return 1;
+                }
+                else {
+                    return -1;
+                }
+            }
+        });
+
+        model.addAttribute("name", name);
+        model.addAttribute("cardEssay", listCardEssay);
+        model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
+        return "home";
+    }
+
     @GetMapping(value = "/home/hot")
     public String pageHomeHot(Model model, HttpServletRequest request) {
         String name = "yuan";
@@ -112,11 +143,13 @@ public class HomeController {
             }
         });
 
+
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
         model.addAttribute("cardApplyCommunity", listCardApplyCommunity);
         return "home";
     }
+
 
     public static double getHot(int up, int down, String post_date) throws ParseException{
         double ans=0;

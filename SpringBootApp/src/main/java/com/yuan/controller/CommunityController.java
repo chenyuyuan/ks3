@@ -35,6 +35,11 @@ public class CommunityController {
         System.out.println(session.getId());
         System.out.println(name);
         String community_name = communityService.getCommunityName(community_id);
+        for(int i=0;i<listCardEssay.size();i++){
+            if(listCardEssay.get(i).getState()==0){
+                listCardEssay.remove(i);
+            }
+        }
 
         model.addAttribute("name", name);
         model.addAttribute("community_name",community_name);
@@ -51,6 +56,11 @@ public class CommunityController {
         ArrayList<Community> listCommunity = homeService.getAllCommunity();
         ArrayList<CardEssay> listCardEssay = communityService.getCommunityCardEssay(community_id);
 
+        for(int i=0;i<listCardEssay.size();i++){
+            if(listCardEssay.get(i).getState()==1){
+                listCardEssay.remove(i);
+            }
+        }
         HttpSession session = request.getSession();
         String account = (String)session.getAttribute("account");
         System.out.println(session.getId());

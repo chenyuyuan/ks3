@@ -94,9 +94,9 @@
                     <div style="height:10px"></div>
                     <div>
                         <div class="input-group" style="width:342px">
-                            <input type="text" style="width:430px" class="form-control" placeholder="留言，点击审核按钮一起发送">
-                            <span class="input-group-addon" style="background-color: #6db0ff;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">审核通过</span>
-                            <span class="input-group-addon" style="background-color: #ff7b6c;color:white;" onclick="window.location.href='http://127.0.0.1:8080/search'">未通过</span>
+                            <input th:id="'msg'+${key.id}" type="text" style="width:430px" class="form-control" placeholder="留言，点击审核按钮一起发送">
+                            <span th:onclick="'javascript:toPass(\''+${key.id}+'\')'" class="input-group-addon" style="background-color: #6db0ff;color:white;">审核通过</span>
+                            <span th:onclick="'javascript:toNotPass(\''+${key.id}+'\')'" class="input-group-addon" style="background-color: #ff7b6c;color:white;">未通过</span>
                         </div>
                     </div>
                 </div>
@@ -143,6 +143,28 @@
     //点击文章内容跳转
     function toEssay(essayid) {
         window.location.href="http://localhost:8080/essay/"+essayid
+    }
+    function toPass(essayid) {
+        alert($("#msg"+essayid).val())
+        data=JSON.stringify({ "essay_id":essayid ,"msg":$("#msg"+essayid).val()})
+        $.post({
+            url:'http://localhost:8080/api/homeadminaudit/pass',
+            contentType: 'application/json; charset=UTF-8',
+            data:data,
+            dataType:'json',
+            success:function (data) {
+                console.log(data)
+                if(data["data"]["msg"]=="success"){
+                    //pass
+                }
+                else if(data["data"]["message"]=="wrongpassword"){
+                    //pass
+                }
+            },
+            error:function(a,b,c) {
+                console.log(a.status+"::"+a.readyState+"::"+b)
+            }
+        })
     }
     function toUp(essayid) {
         alert(essayid)

@@ -1,6 +1,7 @@
 package com.yuan.controller;
 
 import com.yuan.entity.CardFollowCommunity;
+import com.yuan.entity.Tag;
 import com.yuan.service.PostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +28,10 @@ public class PostController {
         int user_id = account == null ? 0 : (int)session.getAttribute("user_id");
         System.out.println(account);
 
-        ArrayList<CardFollowCommunity> listCardFollowCommunity = postService.getAllFollowCommunity();
+        ArrayList<Tag> listCardTag = postService.getAllCardTag();
 
         model.addAttribute("account", account);
-        model.addAttribute("CardFollowCommunity", listCardFollowCommunity);
+        model.addAttribute("CardTag", listCardTag);
 
         return "post";
     }

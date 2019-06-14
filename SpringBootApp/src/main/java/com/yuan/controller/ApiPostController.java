@@ -30,6 +30,9 @@ public class ApiPostController {
         String head = params.getString("head");
         String content = params.getString("content");
         int community_id = Integer.parseInt(params.getString("community_id"));
+        int tag_id1 = Integer.parseInt(params.getString("tag_id1"));
+        int tag_id2 = Integer.parseInt(params.getString("tag_id2"));
+        int tag_id3 = Integer.parseInt(params.getString("tag_id3"));
 
         Hashtable hashtable = new Hashtable();//存放要返回的数据
         HttpSession session = request.getSession();//获取request请求里的session, 如果是第一次请求, 则会创建一个新的session
@@ -40,6 +43,16 @@ public class ApiPostController {
         postService.postEssay(head,community_id);
         int maxId = postService.maxidInEssay();
         postService.postEssayContent(maxId,content);
+
+        if(tag_id1!=0){
+            postService.insEssayTag(maxId,tag_id1);
+        }
+        if(tag_id2!=0){
+            postService.insEssayTag(maxId,tag_id2);
+        }
+        if(tag_id3!=0){
+            postService.insEssayTag(maxId,tag_id3);
+        }
 
         System.out.println(session.getId());
         return ResultFactory.buildSuccessResult(hashtable);

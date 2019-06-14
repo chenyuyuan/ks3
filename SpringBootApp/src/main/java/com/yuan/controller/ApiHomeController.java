@@ -58,4 +58,45 @@ public class ApiHomeController {
         String message = String.format("success");
         return ResultFactory.buildSuccessResult(message);
     }
+
+    @CrossOrigin
+    @RequestMapping(value = "/homeadminaudit/pass", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public Result communityauditPass(@RequestBody JSONObject params, HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("/api/homeadminauditpass:");
+        int essay_id = params.getInteger("essay_id");
+        String msg = params.getString("msg");
+        HttpSession session = request.getSession();//获取request请求里的session, 如果是第一次请求, 则会创建一个新的session
+
+        System.out.println("passing");
+        System.out.println("essay_id:"+essay_id);
+        System.out.println(session.getId());
+
+        int user_id = (int)session.getAttribute("user_id");
+
+
+        homeService.communityAuditPass(essay_id,msg);
+        String message = String.format("success");
+        return ResultFactory.buildSuccessResult(message);
+    }
+    @CrossOrigin
+    @RequestMapping(value = "/homeadminaudit/notpass", method = RequestMethod.POST, produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public Result communityauditNotPass(@RequestBody JSONObject params, HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("/api/homeadminauditpass:");
+        int essay_id = params.getInteger("essay_id");
+        String msg = params.getString("msg");
+        HttpSession session = request.getSession();//获取request请求里的session, 如果是第一次请求, 则会创建一个新的session
+
+        System.out.println("passing");
+        System.out.println("essay_id:"+essay_id);
+        System.out.println(session.getId());
+
+        int user_id = (int)session.getAttribute("user_id");
+
+
+        homeService.communityAuditNotPass(essay_id,msg);
+        String message = String.format("success");
+        return ResultFactory.buildSuccessResult(message);
+    }
 }
