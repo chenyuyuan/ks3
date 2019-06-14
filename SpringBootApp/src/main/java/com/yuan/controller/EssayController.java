@@ -37,6 +37,7 @@ public class EssayController {
         ArrayList<CardComment2> cardComment2 = essayService.getCardComment(essayid);
 
         model.addAttribute("account", account);
+        model.addAttribute("essay_id", essayid);
         model.addAttribute("cardEssay", cardEssay);
         model.addAttribute("cardComment", cardComment2);
         return "essay";

@@ -96,8 +96,8 @@
 				</div>
 				<div class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
 					<div class="input-group" style="width:342px">
-						<input type="text" style="width:430px" class="form-control" placeholder="评论">
-						<span class="input-group-addon" style="background-color: #6db0ff;color:white;">评论</span>
+						<input id="comment-content" type="text" style="width:430px" class="form-control" placeholder="评论">
+						<span id="comment-button" class="input-group-addon" style="background-color: #6db0ff;color:white;">评论</span>
 					</div>
 				</div>
 				<div th:each="key:${cardComment}" class="shadow-smaller card-essay" style="background-color: white;margin-left: 10px;margin-right:-10px;padding:15px;border:#CCCCCC;border-width:1px;border-top-right-radius:4px; border-top-left-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;border-style:solid ">
@@ -129,11 +129,44 @@
 </div>
 <script type="text/javascript" charset="UTF-8">
     function ParentTree() {this.nodes = [];}function ParentTreeNode(data, parent) {this.data = data || null;this.parent = parent || 0;}
+    
+    var essay_id = [[${essay_id}]]
     $(document).ready(function () {
         $(".card-essay").hover(function() {
             $(this).css("border-color","#898989")
         }, function() {
             $(this).css("border-color","#CCCCCC")
+        })
+	    $("#comment-button").click(function () {
+            data=JSON.stringify({
+                "essay_id":essay_id,
+                "content":$("#comment-content").val()
+            })
+            $.ajax({
+                type:'POST',
+                url:'http://localhost:8080/api/essay/comment',
+                contentType: 'application/json; charset=UTF-8',
+                data:data,
+                dataType:'json',
+                xhrFields: {
+                    withCredentials: true
+                },
+                success:function (data) {
+                    console.log(data)
+                    if(data["data"]["msg"]=="login successfully") {
+                        //window.location.href="http://localhost:8080/home"
+                    }
+                    else if(data["data"]["message"]=="loginerror") {
+                        $("#tips").html("密码错误")
+                    }
+                    else if(data["data"]["message"]=="wronginput") {
+                        $("#tips").html("账号不存在")
+                    }
+                },
+                error:function(a,b,c) {
+                    console.log(a.status+"::"+a.readyState+"::"+b)
+                }
+            })
         })
     })
 

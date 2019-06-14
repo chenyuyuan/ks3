@@ -18,4 +18,7 @@ public interface CommunityMapper {
             "ORDER BY post_date DESC")
     ArrayList<CardEssay> getCommunityCardEssay(@Param("community_id") int community_id);
 
+    @Select("SELECT name FROM community WHERE id = #{community_id}")
+    String getCommunityName(@Param("community_id") int community_id);
+
 }

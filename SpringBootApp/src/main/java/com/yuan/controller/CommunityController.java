@@ -34,8 +34,10 @@ public class CommunityController {
         String account = (String)session.getAttribute("account");
         System.out.println(session.getId());
         System.out.println(name);
+        String community_name = communityService.getCommunityName(community_id);
 
         model.addAttribute("name", name);
+        model.addAttribute("community_name",community_name);
         model.addAttribute("community_id", community_id);
         model.addAttribute("cardCommunity", listCommunity);
         model.addAttribute("cardEssay", listCardEssay);

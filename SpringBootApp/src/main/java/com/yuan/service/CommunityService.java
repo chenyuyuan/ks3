@@ -14,4 +14,5 @@ public class CommunityService {
 
     public ArrayList<CardEssay> getCommunityCardEssay(int community_id) {return communityMapper.getCommunityCardEssay(community_id);}
 
+    public String getCommunityName(int community_id) {return communityMapper.getCommunityName(community_id);}
 }
