@@ -40,7 +40,11 @@ public class HomeController {
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
         ArrayList<Community> listCardCommunity = homeService.getAllCommunity();
-
+        for(int i=0;i<listCardEssay.size();i++){
+            if(listCardEssay.get(i).getState()==0){
+                listCardEssay.remove(i);
+            }
+        }
 
         model.addAttribute("name", name);
         model.addAttribute("cardEssay", listCardEssay);
@@ -61,6 +65,11 @@ public class HomeController {
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
 
+        for(int i=0;i<listCardEssay.size();i++){
+            if(listCardEssay.get(i).getState()==0){
+                listCardEssay.remove(i);
+            }
+        }
         Collections.sort(listCardEssay, new Comparator<CardEssay>() {
             @Override
             public int compare(CardEssay o1, CardEssay o2) {
@@ -91,6 +100,11 @@ public class HomeController {
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
 
+        for(int i=0;i<listCardEssay.size();i++){
+            if(listCardEssay.get(i).getState()==0){
+                listCardEssay.remove(i);
+            }
+        }
         Collections.sort(listCardEssay, new Comparator<CardEssay>() {
             @Override
             public int compare(CardEssay o1, CardEssay o2) {
@@ -121,6 +135,11 @@ public class HomeController {
         ArrayList<CardEssay> listCardEssay = homeService.getAllCardEssay(user_id);
         ArrayList<CardApplyCommunity> listCardApplyCommunity = homeService.getAllCardApplyCommunity();
 
+        for(int i=0;i<listCardEssay.size();i++){
+            if(listCardEssay.get(i).getState()==0){
+                listCardEssay.remove(i);
+            }
+        }
         Collections.sort(listCardEssay, new Comparator<CardEssay>() {
             @Override
             public int compare(CardEssay o1, CardEssay o2) {
