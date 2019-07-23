@@ -1,3 +1,3 @@
-# ks3
-reddit-like
+# Reddit like Website
+低仿Reddit
 
