@@ -1,3 +1,2 @@
-# Reddit like Website
+# Reddit
 低仿Reddit
-
